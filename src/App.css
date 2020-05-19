@@ -1,38 +1,314 @@
-.App {
-  text-align: center;
+
+html{
+}
+.loginBackground{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    border: 2px solid black;
+    background-color: rgb(227, 228, 227);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.loginForm{
+    margin-top: 9rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+ background-color: rgba(128, 95, 111, 0.164);
+    width: 40vw;
+    border: 0.5px solid rgb(161, 156, 156);
+    border-radius: 10px;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.loginBtn{
+    border-style: none;
+margin-right: 1rem;
+    border: 1px solid rgb(19, 17, 17);
+    border-radius: 10px;
+    background-color: rgb(20, 228, 131);
+}
+.logoutBtn{
+    border-style: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(226, 216, 126);
+    margin-right: 1rem;
+
+}
+.header{
+    border: 1px solid black;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.logoName{
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;    
+    color: rgb(9, 87, 48) !important ;
+}
+.logoNameshrinked{
+    font-size: 17px;
+    font-weight: bold;
+    color: rgb(0, 0, 0) !important ;
+
+}
+.headerlogo{
+    width: 10rem;
+ 
+}
+.headerlogoshrinked{
+    width: 5rem;
+}
+.headerimg{
+    /* padding: 0rem 0rem  10rem 0rem !important;
+    margin: 0; */
+    left: 0px;
+    position: absolute;
+    width: 80rem;
+    }
+
+.formSearch{
+    margin-right: 6rem;
+}
+.usericons{
+    margin-right: 0.5rem;
+    font-size: 30px;
+}
+.socialheadicons{
+    padding-top: 4px;
+    margin-right: 1rem;
+    font-size: 25px;
+}
+.searchinput{
+    background-color: transparent!important;
+    border: 2px solid rgb(84, 106, 109) !important;
+width: 30rem !important;
+}
+.searchBtn{
+    background-color: rgb(106, 109, 108) !important;
+    color: rgb(19, 94, 94);
+    
+}
+.headercontainer{
+    border: 1px solid orange;
+    margin: 0;
+
+}
+
+
+.headerimg{
+    margin: 0;
+}
+
+
+
+.homepagez{
+	border: 1px solid rgb(28, 179, 133);
+	height: 360vh;
+    background-color: rgb(233, 243, 233);
+}
+.homepagezlinks{
+    margin-top: 5.8rem;
+background-color: rgb(236, 220, 77);
+}
+.homepagezBanner{
+    position: relative;
+    overflow: hidden;   
+    text-align: center;
+    height: 30rem !important;
+    /* border: 1px solid black; */
+    /* background-color: tomato    ; */
+}
+.homepagezContent2{
+    margin: 2rem 0rem 0rem 0rem       ;
+}
+.reviewz{
+    /* border: 2px solid black; */
+    overflow: hidden;
+    width: 30rem;
+}
+.row1homepage{
+    text-align: center;
+    /* border: 1px solid black; */
+}
+.introwrapperimg{
+    margin: 0px 2rem 0rem 0px;
+    overflow: hidden;
+    height: 10rem;
+    width: 10rem;
+    border: 2px solid black;
+border-radius: 50% !important;
+}
+.introwrapper{
+    width: 12rem;
+    /* border: 1px solid black; */
+}
+.midsectionz{
+    height: 90vh;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    /* border: 1px solid rgb(14, 13, 13); */
+}
+.categoryfilter{
+    border: 1px solid rgb(14, 13, 13);
+  
+}
+.btnfilter{
+    background-color: darkgray !important;
+}
+.btnfilter2{
+    background-color: rgb(139, 139, 139) !important;
+
+}
+.btnfilter3{    background-color: rgb(121, 118, 118) !important;
+}
+.btnfilter:hover{
+    background-color: rgb(209, 183, 183) !important;
+
+}
+.btnfilter2:hover{
+    background-color: rgb(209, 183, 183) !important;
+
+}
+.btnfilter3:hover{
+    background-color: rgb(209, 183, 183) !important;
+
+}
+
+.separator{
+    margin: 1rem  0rem  1rem  0rem ;
+    height: 1rem;
+    width: 50vw;
+    background-color: darkgray;
+}
+
+.aboutus{
+    border: 3px solid rgb(192, 26, 26);
+margin-bottom: 5rem;
+}
+
+
+.bookslide1{
+    margin-top: 3rem;
+    border: 0.5px solid rgb(163, 158, 158);
+    height: fit-content;
+    background-color: rgb(228, 232, 238);
+}
+
+
+.availablerow{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+.bookshelfbanner{
+    height: 15rem;
+overflow: hidden;
+background-color: gray;
+/* border: 2px solid black; */
+filter: grayscale(20%);
+opacity: 0.2;
+
+}
+.bookshelfimg{
+    padding-right: 10rem;
+    padding-bottom: 10rem !important;
+width: 130vw;
+}
+.footerz{
+    color: ivory;
+    background-color: rgb(58, 59, 57);
+
+}
+.sharing{
+    /* border: 2px solid white; */
+    font-size: 30px;    
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.socialbtns{
+ margin:0rem  0.5rem 0rem 0.5rem     !important;
+}
+
+.transition {    
+	-webkit-transition: all .3s ease-in-out;
+	  -moz-transition: all .3s ease-in-out;
+	  -o-transition: all .3s ease-in-out;
+	  transition: all .3s ease-in-out;
   }
+  
+
+.navcolor2{
+	background-color: rgb(182, 182, 194);
+	
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navcolor1{
+	background-color: rgba(126, 126, 128, 0.568);
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
