@@ -2,15 +2,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
 import React, { useState, useEffect } from 'react';
 import {Form, Button, Container} from 'react-bootstrap';
 import { AwesomeButton } from "react-awesome-button";
@@ -19,44 +10,31 @@ import { FormControl, InputLabel, Input, FormHelperText, TextField, classes} fro
 import {Link} from 'react-router-dom';
 
 
-export default function LoginPage() {
+export default function SignupPage() {
 
   const [formInput, setFormInput] = useState({});
 
 
 
     return (
-<div className="loginBackground">
+<div className="signupBackground">
   
       <Form className="loginForm">
         <Container className="openwordLogincontain" style={{textAlign:"center"}}>
         <div className="log-in">
-          Log in   </div>
+          Sign up  </div>
 
           <div className="openwordlogintitle"> Openword</div>
         <div>Come for books. Stay for a great community.</div>
         </Container>
 
-
         <Container className="continuewith">
-          <div  className="continuewith2">  Continue with:  </div></Container>
+          <div className="continuewith2">  Continue with:  </div></Container>
         <Container className="loginbtnsWrapper">
-
-{/* <a href={`${process.env.REACT_APP_SERVER}/auth/facebook`}>
-<button className="loginbtnsfb" ><i class=" lgpageicons fab fa-facebook-f"></i></button> </a> */}
-
-<a className="authgg" href={`${process.env.REACT_APP_SERVER}/auth/facebook`}>
-  <i class="lgpageiconsspecial fab fa-facebook-f"></i></a>
-
-<a className="authgg" href={`${process.env.REACT_APP_SERVER}/auth/google`}>
-  <i class="lgpageiconsspecial fab fa-google"></i></a>
-
-<a className="authgg" href={`${process.env.REACT_APP_SERVER}/auth/github`}>
-  <i class="lgpageiconsspecial fab fa-github"></i>
-  </a>
-
-
-  </Container>
+        <button className="hoverlgbtnz loginbtnsfb" ><i class=" lgpageicons fab fa-facebook-f"></i></button>
+        <button className="hoverlgbtnz loginbtnsgg" ><i class="lgpageicons fab fa-google"></i></button>
+        <button className="hoverlgbtnz loginbtnsgh" ><i class="lgpageicons fab fa-github"></i></button>
+        </Container>
 
   <Form.Group className="loginFormGroup" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>

@@ -1,10 +1,12 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {Jumbotron, Container, Form, Button, Row, Col} from 'react-bootstrap';
 import Swiper from 'react-id-swiper';
+import Navbar from '../components/navbar';
 
 
 
-export default function HomePage() {
+export default function HomePage(props) {
+console.log("props in homepagez", props.user)
   const params = {
     slidesPerView: 3,
     spaceBetween: 10,
@@ -14,7 +16,6 @@ export default function HomePage() {
       clickable: true
     }
   }
-
   const comicparams = {
     slidesPerView: 4,
     spaceBetween: 5,
@@ -27,7 +28,13 @@ export default function HomePage() {
 
   
   return (
+
+        
   <div className="homepagez">
+          <Navbar user={props.user} setUser={props.setUser}/>
+
+            {/* <img className="bgimg" src="/images/appbg/1.png"></img> */}
+
   <Container fluid className="homepagezlinks" >
     <Row style={{paddingLeft:"9rem"}}>
       <h3 style={{marginLeft:"1.5rem"}}>REVIEWS</h3>
@@ -42,40 +49,39 @@ export default function HomePage() {
 </Row>
   </Container>
 
-
-<Container  className="homepagezBanner">
+  <Container  className="homepagezBanner">
 <img className="headerimg" src="/images/about1.jpg"></img>
-<h1>THIS IS HOMEPAGE</h1>
-<h2>Spread the knowledge. Read, share, and care.</h2>
+
 </Container>
+
 
 
 
 <Container  className="homepagezContent2">
   <Row  className="row1homepage">
-
 <Col>
-<Row>  <div>
+<Row  className="innerRow" >  
+<img className="treeimg" src="/images/tree.png"></img>
+ 
+        <div>
  <div className="introwrapperimg" ><img className="" src="/images/closing.jpg"></img></div>
  <div className="introwrapper">
-  <h1>  1000 new users
-</h1> 
-   each month</div>
-    </div>
+  <h1>  1000 new users</h1> each month</div>
+</div>
 
 
-    <div> 
-<div className="introwrapperimg" ><img className="" src="/images/closing2.png"></img>
-  </div>
+        <div>           
+<div className="introwrapperimg" ><img className="" src="/images/closing2.png"></img></div>
     
-  <div  className="introwrapper"><h1>GREAT BOOKS</h1> shared for free!</div>
+  <div  className="introwrapper"><h1>Great book</h1> shared for free!</div>
   </div>
 
  <div>
   <div className="introwrapperimg"><img className="" src="/images/closing.jpg"></img></div>
   <div  className="introwrapper">Wanna share
   <h1>your collection?</h1></div>
- </div></Row>
+ </div>
+ </Row>
 
 
   <h1 style={{marginTop:"4rem "}}><i class="fas fa-book-open"></i> Spread the knowledge. Read, share, and care.</h1>
@@ -85,8 +91,11 @@ export default function HomePage() {
 
 
 <div className="reviewz">
-<h2>  FEATURED REVIEW:  
-</h2> 
+<div className="ftreview">  FEATURED REVIEW:  
+</div> 
+<div className="separator">
+        
+</div>
 <img style={{width:"30rem",height:"20rem"}} className="" src="/images/bookreview.jpg"></img>
 <h5>
 Nebbia
@@ -102,9 +111,6 @@ In real life were someone to ask you an innocuous question like: "So what's your
 Forget it, cause you are not William H. Gass – you can never be him. But that's . . .
 </div>
 </div>
-
-
-
 </Row>
 
 </Container>
@@ -116,23 +122,32 @@ Forget it, cause you are not William H. Gass – you can never be him. But that'
  </Row> 
 
 
-
 <Swiper {...params}>
         <div>
 <img style={{height:"18rem"}} src="/images/bookthumbnail/3.jpg"></img>
-
+<div style={{textAlign:"center",border: "1px solid black"}}>from user <h2>Illnov</h2></div>
         </div>
         <div><img style={{height:"18rem"}} src="/images/bookthumbnail/2.jpg"></img>
+        <div style={{textAlign:"center",border: "1px solid black"}}>from user <h2>Illnov</h2></div>
+
 </div>
-<div><img  style={{height:"18rem"}} src="/images/bookthumbnail/comic4.jpg"></img></div>
+<div><img  style={{height:"18rem"}} src="/images/bookthumbnail/comic4.jpg"></img>
+<div style={{textAlign:"center",border: "1px solid black"}}>from user <h2>Illnov</h2></div>
+</div>
         <div><img style={{height:"18rem"}} src="/images/bookthumbnail/1.jpg"></img>
+        <div style={{textAlign:"center",border: "1px solid black"}}>from user <h2>Illnov</h2></div>
+
 </div>
         <div><img style={{height:"18rem"}} src="/images/bookthumbnail/4.jpg"></img>
+        <div style={{textAlign:"center",border: "1px solid black"}}>from user <h2>Illnov</h2></div>
+
 </div>
         <div><img style={{height:"18rem"}} src="/images/bookthumbnail/5.jpg"></img>
+        <div style={{textAlign:"center",border: "1px solid black"}}>from user <h2>Illnov</h2></div>
+
 </div>
 
-      </Swiper>>
+      </Swiper>
 </Container>
 
 
@@ -156,6 +171,13 @@ Forget it, cause you are not William H. Gass – you can never be him. But that'
         <div><img  src="/images/bookthumbnail/comic5.jpg"></img>
 </div>
       </Swiper>>
+
+
+</Container>
+
+
+<Container className="endingz">
+<img className="endingimg" src="/images/read.jpg"></img>
 </Container>
 
 </div>)}
