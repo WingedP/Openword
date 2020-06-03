@@ -1,0 +1,17 @@
+
+
+.starRatingRadio{
+    display: none;
+}
+.star{
+    cursor: pointer;
+    transition: color 200ms;
+}
+
+.yellowColor{
+    color: rgb(233, 233, 74) !important;
+    /* background-color: yellow    !important; */
+}
+.normalColor{
+    color: rgb(56, 54, 54) !important;
+}

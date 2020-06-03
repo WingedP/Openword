@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap');
+
+
+
+.profilepage{
+    /* border: 3px solid black; */
+    padding: 0;
+}
+
+.userSection{
+    padding:0;
+    height: 35vh;
+    position: relative;
+
+background: #7F7FD5;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.userAvatar{
+    position: absolute;
+    bottom: -20%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid rgb(117, 116, 116); */
+    background-color: white;
+    border-radius: 50%;
+ width: 6rem;
+height: 6rem;   
+}
+.userAvatarImage{
+    border: 1px solid rgb(117, 116, 116);
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+}
+
+.userProfileAddBook{
+    display: flex;
+    align-items: center;
+   font-weight:bolder ;
+    border: 1px solid rgb(133, 129, 129);
+    border-radius: 5px;
+    background-color: rgb(70, 224, 178);
+    box-shadow: 9px 10px 5px -2px rgba(0,0,0,0.75);
+
+}
+
+
+.mycollectionWrapper{
+    border-top: 1px solid gray;
+    margin-top: 1rem;
+    padding-top: 5px;
+        width: 70%;
+
+}
+.mycollection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.profileAboutMe{
+position: absolute;
+bottom: -11rem;
+left:1rem;
+height: fit-content;
+width: 12.3vw;
+box-shadow: 9px 10px 5px -2px rgba(0,0,0,0.75);
+background-image: linear-gradient(45deg, rgb(65, 63, 65) 0%, rgb(83, 86, 87) 100%);
+}
+
+
+.userProfile{
+    /* border: 1px solid black; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+}
+.userProfileMenu{
+    /* border: 1px solid black; */
+    padding-right: 10.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profileIcon{
+    top: 3.6rem;
+    left: -4.2rem;
+    position: absolute;
+    width: 11rem;
+    opacity: 0.4;
+}
+.userProfileLogout{
+    display: flex;
+    width: 8rem;
+    justify-content: space-evenly;
+    align-items: center;
+   font-weight:bolder ;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: linear-gradient(to right, #ff9966, #ff5e62); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: 5px 5px 5px -2px rgba(0,0,0,0.75);
+
+
+}
+.profileUserName{
+    font-family: 'Noto Serif', serif;
+        font-size: 2rem;
+        padding-left: 6.7rem;
+
+}
+
+.renderUserCollectionRow{
+    /* border: 1px solid black; */
+    padding-top: 1.3rem;
+    padding-left: 5.5rem;
+    padding-bottom: 3rem;
+}
+.renderUserCollection{
+        border: 1px solid rgb(161, 159, 159);
+        background-color: rgb(241, 240, 232);
+        box-shadow: 1px 2px 11px 7px rgb(230, 226, 181);
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 70%;
+}
+
+.renderUserCollection:hover > .cardhere{
+    background-color: wheat;}
+
+.userCollectionRow{
+width: 50rem !important;
+background-color: violet;
+display: flex;
+}
+/* .cardImg{
+    width: 16rem;
+} */
+
+.profileFormControl{
+height:"2rem";
+width:"14rem";
+background-color: teal !important;
+}
+
+
+.cardhere{
+    min-width: 14rem;
+    margin: 0rem 2rem 0rem 0rem;
+}
+
+.card-img-overlay{
+    padding:0;
+
+}
+.cardhere:hover{
+    filter:drop-shadow(8px 8px 10px gray);
+};
+.cardImg:hover{
+    filter:drop-shadow(8px 8px 10px gray) !important;
+}
+
+.usercollection{
+    position: relative;
+    border: 1px solid black;
+    z-index: 0;
+}
+.userbookitems{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid black;
+    background-color: rgb(228, 228, 228);
+    height: 20rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+
+.cardhere:hover > .btn{
+    position: absolute;
+    background-color: rgb(33, 166, 199);}
+
+.deletebookbtn{
+    position: absolute;
+    background-color: tomato;
+}
+
+
+
+
+
+
+.profilePageControl{
+    /* border: 1px solid black; */
+    display: flex;
+}

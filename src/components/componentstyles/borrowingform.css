@@ -1,0 +1,7 @@
+
+.borrowingForm{
+    border: 1px solid rgb(112, 109, 109);
+    border-radius: 5px;
+    padding: 1rem;
+    width: 50%;
+}

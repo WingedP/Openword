@@ -13,10 +13,6 @@ export default function Footer() {
 
         <footer id="footer" class="footerz">
 <div class="main-footer widgets-dark typo-light">
-    
-<div className="bookshelfbanner">
-<img className="bookshelfimg" src="/images/bookshelf.jpg"></img>
-</div>
 
 
 <div className="sharing container">

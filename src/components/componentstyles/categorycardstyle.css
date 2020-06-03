@@ -1,0 +1,37 @@
+
+
+/* .categorycardswrapper{
+
+} */
+.categorybg{
+    position: absolute;
+    width: 10rem;
+    top: 1rem;
+    opacity: 0.2;
+    z-index: 1;
+}
+.categorycards{
+    margin-left: 1rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    width: 11rem;
+    background-color: rgb(155, 158, 158);
+    display: flex;
+    align-items: center;
+}
+.categorycardbody{
+    padding:0;
+    margin-top: 7px;
+    /* border: 1px solid white; */
+}
+
+.categoryimg{
+    position: relative;
+    z-index: 2;
+
+display: block;
+overflow: hidden;
+width: 10rem;
+height: 15rem;
+}

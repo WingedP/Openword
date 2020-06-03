@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+.signupBackground{
+    position: relative;
+    margin-bottom: 2rem;
+}
+.signupbgimage1{
+    right: 2rem;
+    bottom: 0rem;
+    width: 43rem;
+    position: absolute;
+}
+
+.logintitle{
+    font-size: 25px;
+}
+
+.openwordLogincontain{
+    margin: 0rem 0rem 2rem 0rem;
+    text-align: center;
+}
+.loginbtnsWrapper{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.authgg{
+    margin: 0rem 1rem 0rem 1rem ;
+
+    transition: 0.3s;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    background-color: rgb(206, 206, 207);
+
+}
+.authgg:hover{
+    transition: 0.3s;
+
+    background-color: rgb(247, 224, 160);
+}
+.authgh{
+    margin: 0rem 1rem 0rem 1rem ;
+    font-size: 3.5rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    background-color: rgb(32, 32, 32);
+}
+.authgh:hover{
+    transition: 0.3s;
+    background-color: rgb(120, 196, 177);
+    color: white;
+    text-decoration: none;
+}
+
+.ggiconz{
+    width: 4rem;
+    height: 4rem;
+}
+.authfb{
+    margin: 0rem 1rem 0rem 1rem ;
+    font-size: 2.3rem;
+    color: white;
+    background-color: rgb(113, 113, 175);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+transition: 0.3s;
+}
+.authfb:hover{
+    transition: 0.3s;
+    background-color: rgb(120, 120, 196);
+    color: white;
+    text-decoration: none;
+}
+
+.loginrow1{
+    font-size: 32px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 10vh;
+    margin-bottom: 1rem;
+    padding-left: 3rem;
+    /* border: 1px solid black; */
+
+}
+.loginrow2{
+    /* border: 1px solid black; */
+    padding: 1rem  1rem 1rem 1rem ; 
+}
+
+.usercontainer1{
+    margin-left: 2rem;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    overflow: hidden !important;
+    -webkit-box-shadow: 3px 2px 5px 5px rgba(0,0,0,0.42);
+    -moz-box-shadow: 3px 2px 5px 5px rgba(0,0,0,0.42);
+    box-shadow: 3px 2px 5px 5px rgba(0,0,0,0.42);
+
+}
+.loginForm{
+margin: 2rem   0rem 2rem 0rem   ;
+/* border: 1px solid black; */
+}
+
+.openwordlogintitle{
+    font-size: 23px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ctnwith{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.ctnwithdash{
+    margin: 1rem  0rem 1rem 0rem    !important; 
+    border-bottom: 1px solid rgb(161, 157, 157);
+    text-align: center;
+    position: relative;
+    width: 30rem;
+
+}
+.ctnwith2{
+    width: 10rem;
+    bottom: -0.7rem;
+    left: 31%;
+    position: absolute;
+    background-color: white;
+}
+
+
+
+.forgotpass{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2rem !important;
+    padding-right: 5rem !important;
+
+    /* border: 1px solid black */
+}
+
+.orwith{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.orwithdash{
+    margin: 1rem  0rem 1rem 0rem    !important; 
+    border-bottom: 1px solid rgb(161, 157, 157);
+    text-align: center;
+    position: relative;
+    width: 15rem;
+
+}
+.orwith2{
+    width: 5rem;
+    bottom: -0.7rem;
+    left: 31%;
+    position: absolute;
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.usercontainer2{
+    position: relative;
+    overflow: hidden;
+
+}
+.labelemail{margin-right: 1rem;}
+.labelpassword{margin-right: 2.9rem;}
+.groupemail{
+    padding: 0rem 2rem 0rem 2rem;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: baseline ;
+}
+.grouppassword{
+    padding: 0rem 2rem 0rem 2rem;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: baseline ;
+}
+
+.loginemailinput{
+    width: 24.5rem;
+    border: none;
+    border-bottom: 1px solid rgb(61, 60, 60);
+    border-radius: 0px !important;
+    box-shadow: none !important;
+}
+.loginpasswordinput{
+    width: 24.5rem;
+    border: none;
+    border-bottom: 1px solid rgb(61, 60, 60);
+    border-radius: 0px !important;
+    box-shadow: none !important;
+}
+.loginemailinput:focus{
+    border-bottom: 1px solid rgb(177, 34, 34);
+}
+.loginpasswordinput:focus{
+    border-bottom: 1px solid rgb(177, 34, 34);
+}
+
+.newopenword{
+    padding: 1rem 1rem 1rem 1rem ;  
+    text-align: center;
+}

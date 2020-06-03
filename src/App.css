@@ -1,53 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caladea:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Corben&display=swap');
 
-html{
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+.navbarAbcontrol{
+    border: 1px solid black !important;
+    background-color: orangered !important;
+    height: 10rem;
 }
-
-
-/* .bgimg{
-    position: absolute;
-    background-repeat: repeat-y;
-} */
-
-.loginBackground{
-    display: flex;
-    justify-content: center;
-    /* border: 2px solid black; */
-    background-color: rgb(227, 228, 227);
-}
-
-.signupBackground{
-    display: flex;
-    justify-content: center;
-    /* border: 2px solid black; */
-    background-color: rgb(140, 143, 140);
-}
-
-.continuewith{
-    margin: 3rem 4rem 0rem 4rem;
-    width: 10rem;
+.homepagezlinks{
+    /* border: 1px solid black; */
+    margin-top: 8rem;
+    padding: 1rem  6rem 1rem 11em  !important ;
     position: relative;
-    background-color: grey;
-    height: 0.01rem;
-    text-align: center;
-    /* border: 1px solid gray; */
-}
-.continuewith2{
-    background-color: rgb(233, 233, 232);
-    left: 10.2rem;
-    top:-0.8rem;
+    z-index:2;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    }
+.homepagezlinksrow{
+    display: flex;
+    justify-content: center;
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    /* border: 1px solid black */
 }
-.loginForm{
-    margin: 5rem  0rem   5rem 0rem;
- background-color: rgb(233, 233, 232);
-    width: 31vw;
-    border: 0.5px solid rgb(161, 156, 156);
-    border-radius: 10px;
+.linkhomepagez{
+    border-style: none;
+    background-color: transparent;
+    width: 6rem;
+    /* border: 1px solid black; */
+}
+.linkhomepagez::after{
+    content:'';
+    display: block;
+    width: 0;
+    height: 0.5px ;
+    background-color: black;
+    transition: width .3s;
+}
+.linkhomepagez:hover::after{
+    width: 100%;
+    background-color: black;
+    transition: width .3s;
+}
+.colhome{
+    /* border: 1px solid black; */
+    margin-left: 1rem;
+    margin-right: 3rem;
+}
 
-}
+
+
 .passwordicon{
     position: absolute ;
     top: 2.8rem ;
@@ -61,74 +72,17 @@ html{
     color: gray;    
 
 }
-.openwordLogincontain{
-    position: relative;
-/* border-top-left-radius: 10px ;    
-border-top-right-radius: 10px ;    
-   background-color: rgb(222, 230, 222); */
-border-bottom: 1px solid gray;
-padding: 3rem 0rem 2rem 0rem ;
-}
-.loginFormGroup{ 
-    /* border: 1px solid black; */
-    padding: 0rem  2rem 0rem 2rem      ;
-    position: relative ;
-}
-.nextbtn{margin-left: 4rem;}
-.loginbtnsWrapper{
-padding: 2rem 3rem 0rem 3rem !important;
-display: flex;
-justify-content: space-evenly;
-/* border: 1px solid black; */
-}
-.loginBtn{
-    border-style: none;
-margin-right: 1rem;
-    border: 1px solid rgb(19, 17, 17);
-    border-radius: 10px;
-    background-color: rgb(20, 228, 131);
-}
-.logoutBtn{
-    border-style: none;
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: rgb(226, 216, 126);
-    margin-right: 1rem;
 
-}
 .forgotpass{
     /* border: 1px solid black; */
     padding: 0 !important;
-
 }
+
 
 .header{
     border: 1px solid black;
     padding: 0 !important;
     margin: 0 !important;
-}
-.logoName{
-    font-size: 22px;
-    font-weight: bold;
-    letter-spacing: 2px;    
-    color: rgb(9, 87, 48) !important ;
-}
-.logoNameshrinked{
-    font-size: 17px;
-    font-weight: bold;
-    color: rgb(0, 0, 0) !important ;
-
-}
-.headerlogo{
-    position: relative;
-    width: 10rem;
-    z-index: 3;
- 
-}
-.headerlogoshrinked{
-    position: relative;
-    width: 5rem;
-    z-index: 3;
 }
 .headerimg{
     /* padding: 0rem 0rem  10rem 0rem !important;
@@ -138,28 +92,13 @@ margin-right: 1rem;
     width: 80rem;
     }
 
-.formSearch{
-    margin-right: 6rem;
-}
+
 .usericons{
     margin-right: 0.5rem;
     font-size: 30px;
 }
-.socialheadicons{
-    padding-top: 4px;
-    margin-right: 1rem;
-    font-size: 25px;
-}
-.searchinput{
-    background-color: transparent!important;
-    border: 2px solid rgb(84, 106, 109) !important;
-width: 30rem !important;
-}
-.searchBtn{
-    background-color: rgb(106, 109, 108) !important;
-    color: rgb(19, 94, 94);
-    
-}
+
+
 .headercontainer{
     border: 1px solid orange;
     margin: 0;
@@ -172,17 +111,49 @@ width: 30rem !important;
 }
 
 .homepagez{
+    overflow: hidden;
+    width: 100% !important;
     position: relative;
-	border: 1px solid rgb(28, 179, 133);
+	/* border: 1px solid rgb(28, 179, 133); */
     background-color: rgb(255, 255, 255);
 }
-.homepagezlinks{
-margin-top: 5.8rem;
-background-color: rgba(218, 114, 192);
-box-shadow: 5px 10px 8px #383737;
-position: relative;
-z-index:2;
+.homepagecolz{
+    border: 1px solid black
 }
+.homepagezBannertest{
+    height: 90vh;
+    position: relative;
+    /* border: 1px solid black; */
+
+    overflow: hidden;
+}
+.testbannerimg{
+    left: 8rem;
+    height: 48rem;
+    position: absolute;
+    bottom:-6rem;
+}
+.bannerintro{
+    z-index: 3;
+    position: absolute;
+    font-size: 45px;
+    top: 4rem;
+    color: gray;
+    
+
+
+}
+.bannerintrotitle{
+    font-size: 65px;
+    color: black;
+    font-family: 'Old Standard TT', serif;
+
+
+}
+.readerspan{
+    color: rgb(73, 52, 52)
+}
+
 .homepagezBanner{
     position: relative;
     overflow: hidden;   
@@ -195,26 +166,294 @@ z-index:2;
     margin: 2rem 0rem 0rem 0rem       ;
     /* border: 1px solid black; */
 }
+
+.bookseparator{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+}
+.treetest{
+    position: absolute;
+    border: 1px solid black;
+    border-radius: 50%;
+    height: 24rem;
+    left: 0.1rem;
+    top:-0.2rem;
+
+}
+.containertestttt{
+    /* border: 1px solid black; */
+    position: relative;
+    height: 65vh;
+}
+
+.containerbred{
+    position: absolute;
+    height: 60vh;
+    /* border: 1px solid black; */
+    box-shadow: -6px 2px 5px 7px rgb(128, 126, 128);
+    z-index: 1 ;
+    background-color: rgb(255, 255, 255);
+    margin-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    /* background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/seamless_paper_texture.png); */
+    
+}
+
+.testcontentz{
+    position: relative;
+    font-size: 45px;
+    color: gray;
+    /* border: 1px solid black; */
+    position: relative;
+    font-family: 'Corben', cursive;
+}
+.testcontentzcol1{
+    position: absolute;
+
+
+}
+.testmorecontent{
+    text-align: center;
+}
+.testkeeptrack{
+    font-size: 25px;
+font-weight: bold;
+}
+.testcontentzcol2{    position: absolute;
+    top: 3.2rem;
+    left: 5rem;
+}
+.testcontentzcol3{    position: absolute;
+    top: 7rem;
+    left: 5rem;
+}
+
+.aboutusbtn{
+    position: relative;
+    border:1px solid black !important;
+    background-color: transparent !important;
+    color: black !important;
+    transition: .3s;
+font-weight: bold !important;
+}
+.aboutusbtn1{
+    position: absolute;
+    top: 0.2rem;
+    left: 0rem;
+    height: 2.5rem;
+    width: 6rem;
+    border-radius: 5px;
+    border:1px solid black ;
+    box-shadow: -11px -11px 1px 0px rgba(0,0,0,0.75);
+    transition: .3s;
+
+}
+.aboutusbtn1:hover{
+    transition: .3s;
+    position: absolute;
+    top: 0.3rem;
+    left: 0rem;
+    box-shadow: -11px -5px 1px 0px rgba(194, 131, 131, 0.75);
+}
+.aboutusbtn:hover{
+    transition: .3s;
+font-size: 18px;
+}
+
+
+
+
+
+
+.seemorebtn{
+    position: relative;
+    display: flex;
+    align-items: center !important;
+    width: 4rem;    
+    height: 1.5rem;
+    background-color: transparent !important;
+    transition: .3s !important;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.signupbtn{
+    position: relative;
+    border: 1px solid black;
+    background-color: transparent !important;
+    color: black !important;
+    font-size: 18px !important;
+    transition: .3s !important;
+
+}
+.signupbtn1{
+    position: absolute;
+    left: -1rem;
+    height: 2.5rem;
+    width: 6rem;
+    border-radius: 5px;
+    border: 1px solid black;
+    transition: .3s !important;
+    box-shadow: 15px -13px 1px 0px rgba(194, 131, 131, 0.75);
+}
+.signupbtn:hover{
+    transition: .3s !important;
+    font-size: 18.2px !important;
+
+}
+.signupbtn1:hover{
+    position: absolute;
+    left: 0.1rem;
+    top:0.4rem;
+    transition: .3s !important;
+    box-shadow: -1.5rem -1rem 1px 0px rgba(233, 55, 55, 0.75);
+}
+
+
+
+.sprdknowledge{
+    font-size: 30px;
+    font-family: 'Old Standard TT', serif;
+
+}
+
+.txtread{
+    font-size: 55px;
+    color: rgb(126, 27, 57);
+    font-family: 'Satisfy', cursive;
+}
+.txtlend{
+    font-size: 60px;
+    color: rgb(172, 55, 99);
+    font-family: 'Old Standard TT', serif;
+}
+.txtborrow{ 
+    font-size: 62px;
+    color: rgb(117, 69, 69);
+    font-family: 'Sacramento', cursive;
+}
+.testcontentzIcon{
+    text-align: center;
+    position: absolute;
+    bottom: 2rem;
+    height: 6rem;
+    border-top: 1px solid rgb(145, 142, 142);
+    padding-top: 1rem;
+    width: 100%;
+}
+
+
+
+
+
+
+
+.bookseparatorimg{
+height: 7rem;
+}
+
+.categoriesexplore{
+    position: relative;
+    margin-left: 4rem !important;
+    width: 36rem;
+    /* border: 1px solid black; */
+
+}
+.categoriesexploreflourish{
+    top: 0px;
+    width: 10rem;
+    position: absolute;
+}
+
+
+
 .reviewz{
     /* border: 2px solid black; */
-    overflow: hidden;
     width: 30rem;
 }
-.ftreview{
-    font-size: 30px;
-    font-family: 'Oswald', sans-serif;
+.reviewzcontent{
+        /* border: 2px solid black; */
+    position: relative;
+    padding-top:5rem;
+    padding-bottom: 0.5rem;
+        -webkit-box-shadow: 2px 2px 5px 4px rgba(0,0,0,0.75);
+        -moz-box-shadow: 2px 2px 5px 4px rgba(0,0,0,0.75);
+        box-shadow: 2px 2px 5px 4px rgba(63, 63, 63, 0.75);    
+    
+    }
+.reviewtitle{
+    top: 2rem;
+    left: -3rem;
+        color: tomato;
+        font-size: 34px;
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+border-bottom: 1px solid gray;
+border-top: 1px solid gray;
+
+    }    
+        
+.reviewtext{
+background-color: rgb(231, 214, 231);
+border-radius: 5px;
+padding: 5px;
+margin-top: 8px;
+margin-left: 8px;   
+margin-right: 8px;   
+
+
+font-family: 'Roboto Slab', serif;
 }
+
+.ftreview{
+    position: relative;
+    font-size: 38px;
+    font-family: 'Old Standard TT', serif;
+    margin-bottom: 2rem;
+}
+.ftreviewflourish{
+    top: 0px;
+    width: 10rem;
+    position: absolute;
+}
+
 .separator{
     height: 1px !important;
     background-color: gray;
     width: 15rem !important;
-    margin-top: 2rem !important;
-    margin-bottom: 4rem !important;
+    margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
 }
+
 .row1homepage{
-    text-align: center;
     /* border: 1px solid black; */
 }
+
+.reviewer{
+    font-size: 23px;
+}
+.reviewdetail{
+    display: flex;
+    align-items: center;
+}
+
 .innerRow{
     padding: 0rem   2rem 0rem 0rem   ;
     display: flex;
@@ -278,21 +517,68 @@ border-radius: 50% !important;
 margin-bottom: 5rem;
 }
 
+.bookslide{
+    /* border: 1px solid black; */
+}
 
 .bookslide1{
     margin-top: 3rem;
-    border: 0.5px solid rgb(163, 158, 158);
+    /* border: 0.5px solid rgb(163, 158, 158); */
     height: fit-content;
-    background-color: rgb(228, 232, 238);
+    /* background-color: rgb(228, 232, 238); */
 }
+.swipeimg{
+    text-align: center;
+    background-color: rgb(228, 232, 238);
+ padding: 1.3rem;
 
-
+}
+.swiperavailimg{
+    box-shadow: 4px 2px 5px 7px rgb(70, 69, 69);
+}
+.swiperavailbookdetail{
+    margin-top: 1rem;
+}
 .availablerow{
     /* border: 1px solid black; */
+    position: relative;
     display: flex;
     justify-content: center;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Old Standard TT', serif;
+
+}
+.availablerowimg{
+    width: 5rem;
+    top :0px;
+    left:35%;
+    position: absolute;
+}
+.availablerowflourish{
+    top :-2.5rem;
+    left:40%;
+    position: absolute;
+    opacity: 0.5;
 }
 
+.viewallbtn{
+    width: 8rem;
+    height: 2rem;
+    font-size: 20px;
+    border: 1px solid rgb(92, 92, 92);
+    color: gray;
+    background-color: ghostwhite;
+    transition: 0.3s;
+
+}
+.viewallbtn:hover{
+    background-color: rgb(125, 128, 128);
+    color: rgb(250, 250, 250);
+    transition: 0.3s;
+}
 
 
 
@@ -313,9 +599,12 @@ opacity: 0.2;
 width: 130vw;
 }
 .footerz{
+    position: absolute;
+right: 0rem !important; 
+width: 100%;    
+ z-index: 3;
     color: ivory;
     background-color: rgb(58, 59, 57);
-
 }
 .sharing{
     /* border: 2px solid white; */
@@ -333,24 +622,6 @@ width: 130vw;
     position: absolute;
     z-index: 1;
 }
-.transition {    
-	-webkit-transition: all .3s ease-in-out;
-	  -moz-transition: all .3s ease-in-out;
-	  -o-transition: all .3s ease-in-out;
-	  transition: all .3s ease-in-out;
-  }
-  
-
-.navcolor2{
-    position: relative;
-    background-color: rgb(159, 159, 218);
-	
-}
-
-.navcolor1{
-    position: relative;
-    background-color: rgba(126, 126, 128, 0.568);
-}
 
 
 
@@ -363,101 +634,6 @@ width: 130vw;
 }
 
 
-
-
-
-
-
-/* LOGIN PAGE */
-.log-in{
-    position: absolute;
-    width:5rem;
-    height: 5rem;
-    border-radius: 50%;
-    top:-2.6rem;
-    left: 10.5rem;
-    background-color: rgb(233, 229, 229);
-    border: 3px solid rgb(173, 173, 240);
-    font-size: 27px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 3px;
-}
-
-.openwordlogintitle{
-    font-size: 30px;
-    font-family: 'Caladea', serif;
-}
-
-.loginbtnsfb:hover{
-background-color: rgb(119, 44, 172);
-    transition: 0.2s; 
-}
-.loginbtnsgg:hover{
-    background-color: rgb(113, 212, 56);
-    transition: 0.2s; 
-}
-.loginbtnsgh:hover{
-    background-color: rgb(52, 48, 54);
-    color: ivory;
-    transition: 0.2s; 
-}
-.loginbtnsfb{   
-    transition: 0.2s; 
-    color: honeydew;
-    border: none;
-    background-color: rgb(88, 88, 182);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-}
-.loginbtnsgg{    
-border: none;
-background-color: transparent;
-}
-.hrefgg{
-    background-color: teal;
-    width: 10rem !important;
-    border-radius: 50%;
-    /* border: 1px solid black; */
-}
-.loginbtnsgh{      
-    background-color: gray;
-    transition: 0.2s; 
-    border: none;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-}
-.lgpageicons{
-
-    font-size: 24px;
-}
-
-
-
-.lgpageiconsspecial{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: orange;
-    font-size: 24px;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    /* border: 1px solid black; */
-    transition: 0.2s; 
-
-}
-.lgpageiconsspecial:hover{
-    transition: 0.2s; 
-    background-color: rgb(171, 243, 4);
-}
-.authgg{
-    color: rgb(10, 10, 10) !important;
-    text-decoration: none !important;
-}
 
 
 
