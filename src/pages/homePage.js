@@ -48,7 +48,7 @@ return (
         <Col className="colhome"  xs={6}>        <button className="linkhomepagez">Giveaways</button></Col>   
         {/* <Col className="colhome"  xs={6}><button className="linkhomepagez">Browse</button></Col>    */}
         <Col className="colhome"  xs={6}>        <button className="linkhomepagez">Explore</button></Col>   
- </Row>
+ </Row> 
   </Container>
 
 <Container className="homepagezBannertest">
