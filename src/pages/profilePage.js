@@ -126,7 +126,7 @@ const deleteUsersBook = async (id) => {
   }
   const uploadFile = async (e) => {
     e.preventDefault();
-    const selectedFile = document.getElementById('upload_form').files[0].path;
+    const selectedFile = document.getElementById('upload_form').files[0];
     console.log("selectedFile", selectedFile)
     var formdata = new FormData();
     formdata.append("image", selectedFile);
@@ -143,6 +143,7 @@ const deleteUsersBook = async (id) => {
       if (data.success) {
         // console.log("hahahhahaha")
         setUploadPic(data.data.link)
+        console.log("uploadPic", uploadPic )
       }
       else { console.log("cannot upload because of", data.message) }
     } else { alert("cannot upload") }
