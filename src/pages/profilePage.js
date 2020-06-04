@@ -118,7 +118,10 @@ const deleteUsersBook = async (id) => {
       },
       body: JSON.stringify(newBook)
     });
-    if (res.status === 201) { const body = await res.json() }
+    if (res.status === 201) { const body = await res.json();
+      alert("successfully upload book's data");
+      console.log(body)
+    }
     else (alert("cannot upload book's data"))
   }
   const uploadFile = async (e) => {
@@ -137,7 +140,7 @@ const deleteUsersBook = async (id) => {
       const data = await res.json();
       console.log(data)
       if (data.success) {
-        console.log("hahahhahaha")
+        // console.log("hahahhahaha")
         setUploadPic(data.data.link)
       }
       else { console.log("cannot upload because of", data.message) }
@@ -164,7 +167,7 @@ const deleteUsersBook = async (id) => {
   };
 
   if (myCollection.length <= 0) { console.log("user has no book") };
-  // console.log("uploadBook", uploadBook)
+  console.log("uploadBook", uploadBook)
   return (
     <Container fluid className="profilepage">
       <Modal
