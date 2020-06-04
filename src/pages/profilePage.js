@@ -127,6 +127,7 @@ const deleteUsersBook = async (id) => {
   const uploadFile = async (e) => {
     e.preventDefault();
     const selectedFile = document.getElementById('upload_form').files[0].path;
+    console.log("selectedFile", selectedFile)
     var formdata = new FormData();
     formdata.append("image", selectedFile);
     const res = await fetch("https://api.imgur.com/3/image", {
