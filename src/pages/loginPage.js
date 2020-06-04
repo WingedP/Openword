@@ -2,15 +2,16 @@
 
 import React, { useState, useEffect } from 'react';
 import {Form, Button, Container, Row, Col} from 'react-bootstrap';
+import {Link, useHistory} from 'react-router-dom';
 import { AwesomeButton } from "react-awesome-button";
 import "react-awesome-button/dist/styles.css";
 import { FormControl, InputLabel, Input, FormHelperText, TextField, classes} from '@material-ui/core';
-import {Link} from 'react-router-dom';
 import '../pages/pagestyle/loginPage.css';
 import Select from 'react-select';
 
 
 export default function LoginPage(props) {
+const history = useHistory();
 
   
 
@@ -28,6 +29,7 @@ const handleSubmit=async(e)=>{
   if(res.status===200){const body=await res.json()
   localStorage.setItem("token",body.data.token)
   props.setUser(body.data.user)
+  history.push("/");
    } else
   (alert("cannot log in with your email/password"))
 }

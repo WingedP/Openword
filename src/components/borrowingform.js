@@ -5,6 +5,7 @@ import {Link, useHistory} from 'react-router-dom';
 
 
 export default function Borrowingform(props) {
+  let history = useHistory();
   let [formInput, setFormInput] = useState({});
   let bookDetail = props.singleBookData;
   // console.log("bookDetail", bookDetail)
@@ -12,33 +13,41 @@ export default function Borrowingform(props) {
   // 1 POST request for cart to create borrowing form in DB
   const postBorrowForm = async (e) => {
     e.preventDefault();
-    const res = await fetch (process.env.REACT_APP_SERVER + `/createcart`, {
+    formInput.book = bookDetail._id
+    const res = await fetch (process.env.REACT_APP_SERVER + `/cart/createcart`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${localStorage.getItem("token")}`
-      },
+      },  
       body: JSON.stringify(formInput)
-    }); if(res.status===201){const body = await res.json();
+    }); if(res.status===201){
+      const body = await res.json();
+      alert("Book request successful! Waiting for user's response")
+      history.push(`/users/me`);
     } 
     else (alert("cannot send this borrow form"))
   }
 
+
   const handleBorrowFormChange=(e)=>{setFormInput({...formInput, [e.target.name] : e.target.value })      
 }
 
+
+
+
   console.log("formInput",formInput)
     return (
-<Form className="borrowingForm" onChange={handleBorrowFormChange} onSubmit={postBorrowForm} >
+<Form className="borrowingForm" onChange={handleBorrowFormChange} onSubmit={postBorrowForm}>
 <Form.Row>
     <Container>You want to borrow <span style={{fontSize:"2rem"}}>{bookDetail.title}</span> 
     from <span style={{fontSize:"2rem"}}>{(bookDetail.owner && bookDetail.owner.name || "user" )}</span> </Container>
 <Container for="" > Your full name right below: </Container> 
     <Col> 
-      <Form.Control name="firstname" placeholder="First name" />
+      <Form.Control name="firstname" placeholder="First name"/>
     </Col>
     <Col>
-      <Form.Control name="lastname" placeholder="Last name" />
+      <Form.Control name="lastname" placeholder="Last name"/>
     </Col>
   </Form.Row>
 
@@ -74,11 +83,9 @@ export default function Borrowingform(props) {
     <Form.Label>Duration:</Form.Label>
      <Form.Text>You will borrow this until...</Form.Text>
 <div style={{display:"flex"}}>
-  <div>From: <input name="from" type="date" min="2020-04-01" max="2030-04-30"/> </div>
-  <div>To:<input name="to" type="date" min="2020-04-01" max="2030-04-30"/></div>
+  <div>From: <input style={{marginLeft:"0.8rem"}} name="from" type="date" min="2020-04-01" max="2030-04-30"/> </div>
+  <div style={{marginLeft:"3rem"}}>To:<input style={{marginLeft:"1rem"}} name="to" type="date" min="2020-04-01" max="2030-04-30"/></div>
 </div>
-
-
 
     </Form.Group>
     <Form.Group controlId="exampleForm.ControlTextarea1">

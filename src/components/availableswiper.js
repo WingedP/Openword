@@ -19,8 +19,7 @@ export default function Availableswiper() {
         }
       }
 
-
-    const getAvailableBook = async () => {
+  const getAvailableBook = async () => {
         const res = await fetch (process.env.REACT_APP_SERVER + `/books?availability=true&page=1&limit=30`, {
           method: "GET",
           headers: {

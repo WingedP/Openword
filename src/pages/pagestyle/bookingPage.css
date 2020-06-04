@@ -8,8 +8,10 @@
     text-align: center;
 }
 .bookingPageMainSection{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     height: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;

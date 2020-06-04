@@ -21,18 +21,13 @@ box-shadow: 3px 1px 36px 17px rgb(236, 230, 233);
     background: #EFEFBB;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #D4D3DD, rgb(240, 240, 236));  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #D4D3DD, rgb(199, 199, 198)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
 }
-
-
-
 
 .swipeimages{
     width: 14rem;
     -webkit-box-shadow: 6px 9px 5px 0px rgba(56,54,56,1);
     -moz-box-shadow: 6px 9px 5px 0px rgba(56,54,56,1);
     box-shadow: 6px 9px 5px 0px rgba(56,54,56,1);
-
 }
 
 .swipercard::-webkit-scrollbar{
@@ -53,7 +48,7 @@ box-shadow: 3px 1px 36px 17px rgb(236, 230, 233);
     transition: 0.5s;}
     .swipercard > img {transform: scale(1);}
     .swipercard:hover > img {
-        transform: scale(1.15);
+        transform: scale(1.08);
         filter: brightness(100%);
       }
         .swipercard img {transition: 0.5s;} 

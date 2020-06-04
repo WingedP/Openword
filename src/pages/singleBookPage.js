@@ -74,7 +74,7 @@ let renderGetReviews = showReviews.length === 0
 ? <div>no review here</div>  
 : showReviews.map(el=>{
   return(
-<Container>
+<Container className="reviewContainer">
   <div>  {el.title} </div>
   <div>  {el.content} </div>
   <div>  {el.rating} </div>
@@ -107,19 +107,31 @@ const handleReviewChange=(e)=>{
 
 if(singleBookData===null && singleBookData.data===null) return<div>Loading</div>;
   return (
-    <div style={{border:"1px solid black"}}>
-    <div>{singleBookData.title}</div>    
-    <div>Available until: {singleBookData.until}</div>  
-    <div>Book's description: {singleBookData.description}</div>  
-    <div>Book can be borrowed for: {singleBookData.price}</div>           
+    <div className="bookdata">
+
+      <Container fluid className="containerBookdata">
+<div>
+ <img className="singlebookthumbnail" src={singleBookData.thumbnail}></img>
+</div>
+
+<div className="detailsinglebook" style={{border:"1px solid black"}}>
+  <div><span style={{fontSize:"1.4rem"}}>Title:</span> {singleBookData.title}</div>    
+    <div><span style={{fontSize:"1.4rem"}}>Available until: </span>{singleBookData.until}</div>  
+    <div><span style={{fontSize:"1.4rem"}}>Book's description:</span> {singleBookData.description}</div>  
+    <div>Book can be borrowed for: {singleBookData.price} VND</div>           
          <div><button onClick={()=>{setShowBorrowModal(true)}}> Borrow? </button></div>
-   <img style={{width:"13rem"}} src={singleBookData.thumbnail}></img>
-  
-      <div>
-        <div style={{border:"1px solid black", width:"15rem", height:"", backgroundColor:"gray"}}>
-        Review box here:
+         </div> 
+
+         <div className="reviewSection">
+<div  style={{fontSize:"1.4rem"}}>Review:</div>       
     {renderGetReviews}</div>
-      <Form onChange={handleReviewChange} onSubmit={postReview} style={{border:"0.5px solid gray", width:"15rem"}}>
+
+</Container>
+
+
+  
+      <div className="writereviewsection">
+      <Form onChange={handleReviewChange} onSubmit={postReview}>
       <Form.Group controlId="formBasicEmail">
       <Form.Label>Title:</Form.Label>
       <Form.Control name="title" type="text" placeholder="Review's title" />

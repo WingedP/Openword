@@ -55,9 +55,15 @@ collapseOnSelect expand="lg" bg="" variant="light">
     </Nav> */}
 
 <Nav className="mr-auto">
-<Navbar.Brand href="#home" className="testnavLogo">Openword</Navbar.Brand>
-    </Nav>
+{/* <Navbar.Brand href="#home" className="testnavLogo">Openword</Navbar.Brand> */}
+  
+  <Link to='/'>
+  <Navbar.Brand  className="testnavLogo">Openword</Navbar.Brand>
+  </Link>
 
+
+
+    </Nav>
     <Nav>
     <Form  style={{position:"relative"}} inline>
       <FormControl type="text" placeholder="Search" className="mr-sm-2" />

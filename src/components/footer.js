@@ -11,10 +11,8 @@ export default function Footer() {
     return (
 
 
-        <footer id="footer" class="footerz">
+<footer id="footer" class="footerz">
 <div class="main-footer widgets-dark typo-light">
-
-
 <div className="sharing container">
 HAVE FRIENDS WHO LOVE TO READ? SHARE.
 <div>

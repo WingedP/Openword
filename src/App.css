@@ -9,6 +9,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 
+
+.App{
+}
+
 .navbarAbcontrol{
     border: 1px solid black !important;
     background-color: orangered !important;
@@ -599,7 +603,7 @@ opacity: 0.2;
 width: 130vw;
 }
 .footerz{
-    position: absolute;
+margin-top: 5rem;
 right: 0rem !important; 
 width: 100%;    
  z-index: 3;

@@ -5,13 +5,88 @@
 }
 .star{
     cursor: pointer;
+    font-size: 2rem;
     transition: color 200ms;
 }
 
 .yellowColor{
-    color: rgb(233, 233, 74) !important;
+    color: rgb(233, 233, 74) !important;    
     /* background-color: yellow    !important; */
 }
 .normalColor{
     color: rgb(56, 54, 54) !important;
 }
+/* .covercontainerz{
+    position: relative;
+    padding-right: 50rem;
+} */
+/* .covercontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;   
+    height: 20rem;
+    transform: rotate(45deg);
+    background-color: rgb(253, 253, 229);
+    box-shadow: 0px 2px 5px 8px rgba(158,158,158,1);
+} */
+
+.singlebookthumbnail{
+    box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.75);
+    width: 15rem;
+    /* transform: rotate(-45deg); */
+    /* margin-left: 6rem; */
+    margin-right: 3rem;
+}
+
+.reviewSection{
+    /* border: 1px solid black; */
+    margin-left: 2rem;
+    width: 30rem;
+    }
+.bookdata{
+    /* border: 1px solid black; */
+}
+.containerBookdata{
+    margin-top: 3rem;
+    display: flex;
+ /* border: 1px solid black; */
+ /* justify-content:space-between; */
+
+}
+.detailsinglebook{
+    box-shadow: 0px 2px 5px 1px rgb(107, 106, 106);
+    padding: 1rem;
+}
+.reviewContainer{
+    margin-top: 1.5rem;
+    display:inline-block;
+    width: 23rem;
+    padding:5px 6px 8px 6px;
+    border-radius: 6px;  
+    /* float: right; */
+    margin-right: 40px;
+    /* color:black; */
+    border: 1px solid gray;
+    background-color:#cad8da;
+    position: relative;
+}
+
+.reviewContainer:after {
+    content: "";
+    position:absolute;
+    margin-top:-6px;
+    margin-left:-5px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #cad8da;
+    transform:rotate(-45deg);
+    right: -15px; 
+    top: 10px;
+  }
+
+  .writereviewsection{
+      margin-left: 1rem;
+      width: 40rem !important;
+      margin-top: 3rem;
+  }

@@ -3,11 +3,11 @@ import {Link, useParams, useHistory} from 'react-router-dom';
 import BorrowingForm from '../components/borrowingform';
 import '../pages/pagestyle/bookingPage.css';
 
-export default function BookingPage() {
-useEffect(() => {
- getSingleBook()}, []);
+export default function BookingPage(props) {
+useEffect(() => { getSingleBook()}, []);
  let { id } = useParams(); 
 let [singleBookData, setSingleBookData] = useState({});
+
 const getSingleBook = async () => {
     const res = await fetch (process.env.REACT_APP_SERVER + `/users/books/borrowingform/${id}`, {
       method: "GET",
@@ -25,18 +25,14 @@ const getSingleBook = async () => {
 
 //   if(singleBookData == {})return<div>Loading</div>;
 return (
-        <div className="bookingPage">
+  <div className="bookingPage">
 <div className="bookingpageTitle" style={{textAlign:"center"}}>BOOKING PAGE HERE! SIGN THIS FORM, AND YOU'RE GOOD TO GO.</div>
 <div className="bookingPageMainSection"  >
 <BorrowingItem singleBookData={singleBookData}/>
 <BorrowingForm singleBookData={singleBookData}/>
 </div>   
-        </div>
-    )
-}
-
-
-
+</div>
+)}
 
 
 //function borrowingForm is in component

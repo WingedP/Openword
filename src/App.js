@@ -76,17 +76,23 @@ function App() {
       <Switch>
         {/* <Route path="/" user={user} setUser={setUser} exact component={HomePage}/> */}
         {/* <Route path="/login" exact component={LoginPage} /> */}
-        <Route path="/" exact render={() => (<HomePage 
+        <Route path="/" exact render={() => 
+        (<HomePage 
         cat={cat} setCat={setCat}
-        user={user} setUser={setUser}/>)}/> 
+        user={user} setUser={setUser}/>)}
+        
+        /> 
         <Route path="/login" exact render={() => (<LoginPage user={user} setUser={setUser}/>)}/> 
-        <Route path="/signup" exact component={SignupPage}/>
+        <Route path="/signup" exac  t component={SignupPage}/>
         <Route path="/users/me" exact render={() =>(<ProfilePage
         cat={cat} setCat={setCat}
         user={user} setUser={setUser}/>)}/>
         <Route path="/explore" exact component={Explore}/>
         <Route path="/users/books/:id" exact render={(props)=><SingleBookPage {...props}/>}/>
-        <Route path="/users/me/history" exact render={(props)=><UserHistoryPage {...props}/>}/>
+        <Route path="/users/me/history" exact render={(props)=>(<UserHistoryPage
+        user={user} setUser={setUser}
+        {...props}/>)}
+        />
         <Route path="/users/books/borrowingform/:id" exact render={(props)=><BookingPage {...props} />}/>
 
         

@@ -42,9 +42,7 @@ export default function (props) {
   }
 
 
-  const deleteUsersBook = async (id) => {
-
-
+const deleteUsersBook = async (id) => {
     const res = await fetch(process.env.REACT_APP_SERVER + `/books/${id}`, {
       method: "DELETE",
       headers: {
@@ -67,27 +65,19 @@ export default function (props) {
       // console.log(el.id)
       return (
 
-        <Card className="cardhere" key={el.id}>
+        <Card className="cardhere"  onClick={() => {history.push(`./books/${el.id}`);}} key={el.id}>
 
-          <Card.Img onClick={() => {
-            history.push(`./books/${el.id}`);
-          }}
+          <Card.Img
             className="cardImg" variant="top" src={el.thumbnail} />
-          <Card.Body
-            className="belrevwefewf">
-            <Card.Title>Book's title: {el.title}</Card.Title>
-            <Card.Text className="">{el.createAt}</Card.Text>
-            {/* <Card.Text className="">ID HERE: {el.id}</Card.Text> */}
-            {/* <Card.Text className="cardoverview">{el.description}</Card.Text>  */}
-
-            {/* <button id="deletebookbtn" className="deletebookbtn" onClick={()=>{deleteUsersBook(el.id)}}>  
-<i style={{fontSize:"2rem"}} class="far fa-times-circle"></i></button> */}
-
+              <Card.ImgOverlay>
             <button id="deletebookbtn" className="deletebookbtn" onClick={() => {
               setDeletedId(el.id)
               setShowDeleteModal(true)
             }}>
-              <i style={{ fontSize: "2rem" }} class="far fa-times-circle"></i></button>
+              <i style={{ fontSize: "2rem" }} class=" deleteIcon far fa-times-circle"></i></button>
+           </Card.ImgOverlay>
+          <Card.Body className="profileBookCardBody">
+            <Card.Title>Title: {el.title}</Card.Title>
           </Card.Body>
 
           {/* <button onClick={()=>{deleteUsersBook(el.id)}}
@@ -174,7 +164,7 @@ export default function (props) {
   };
 
   if (myCollection.length <= 0) { console.log("user has no book") };
-  console.log("uploadBook", uploadBook)
+  // console.log("uploadBook", uploadBook)
   return (
     <Container fluid className="profilepage">
       <Modal

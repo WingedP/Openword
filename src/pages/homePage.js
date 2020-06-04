@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {Jumbotron, Container, Form, Card, Button, Row, Col} from 'react-bootstrap';
 import Swiper from 'react-id-swiper';
+import { Link, useHistory } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import Categorycard from '../components/categorycard';
 import SwiperAvailableItem from '../components/availableswiper';
@@ -26,7 +27,6 @@ export default function HomePage(props) {
       clickable: true
     }
   }
-
   let showAllCategories = props.cat.map(el=>{
         return(
         <Container style={{display:"flex", flexDirection:"column"}}>
@@ -107,9 +107,9 @@ About us</Button>
 <h3>Become Openword's member?</h3>
 
 <Container style={{height:"5rem", paddingTop:"1.2rem"}} >
-<Button className="signupbtn">
-<div className="signupbtn1"></div>
-Sign up</Button>
+        <Link to='/signup'> <Button className="signupbtn"><div className="signupbtn1"></div>
+Sign up</Button></Link>
+
 
 </Container>
 
@@ -264,23 +264,24 @@ Forget it . . . <i style={{fontSize:"20px"}} class="fas fa-angle-double-right"><
 </Container>
 
 
-<Row className="availablerow"> <h4>   Like it? There's more.  <button className="viewallbtn">View all.</button> </h4> 
+<Row className="availablerow"> <h4>   Like it? There's more.  
+        <Link to='/explore'><button className="viewallbtn">View all.</button></Link>
+         </h4> 
  </Row> 
 
 
 <Container className="bookslide1"  >
-<Row className="availablerow"> <h2>   By genres: Comic  </h2> 
- </Row> 
+<Row className="availablerow"> <h2>By genres: Comic  </h2> </Row> 
 
 
 
 <Swiper {...comicparams}>
+        
         <div>
 <img src="/images/bookthumbnail/comic1.jpg"></img>
 
         </div>
-        <div><img  src="/images/bookthumbnail/comic2.jpg"></img>
-</div>
+        <div><img  src="/images/bookthumbnail/comic2.jpg"></img></div>
         <div><img src="/images/bookthumbnail/comic3.jpg"></img>
 </div>
         <div><img  src="/images/bookthumbnail/comic4.jpg"></img>
