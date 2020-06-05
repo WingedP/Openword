@@ -121,7 +121,7 @@ const deleteUsersBook = async (id) => {
     if (res.status === 201) { const body = await res.json();
       alert("successfully upload book's data");
       console.log(body)
-    }
+    } 
     else (alert("cannot upload book's data"))
   }
   const uploadFile = async (e) => {
@@ -133,7 +133,7 @@ const deleteUsersBook = async (id) => {
     const res = await fetch("https://api.imgur.com/3/image", {
       method: "POST",
       headers: {
-        Authorization: `Client-ID 5e08b1b2a7ee5f1`
+        Authorization: `Client-ID ${process.env.REACT_APP_IMGUR}`
       },
       body: formdata
     });

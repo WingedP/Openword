@@ -12,9 +12,6 @@ import Select from 'react-select';
 
 export default function LoginPage(props) {
 const history = useHistory();
-
-  
-
 const [formInput, setFormInput] = useState({});
 const handleSubmit=async(e)=>{
   e.preventDefault();

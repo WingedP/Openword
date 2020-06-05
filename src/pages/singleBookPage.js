@@ -43,7 +43,7 @@ const StarRating = ()=>{
 const getSingleBook = async () => {
         const res = await fetch (process.env.REACT_APP_SERVER + `/users/books/${id}`, {
           method: "GET",
-          headers: {
+          headers: {  
             "Content-Type": "application/json",
             // "Authorization": `Bearer ${localStorage.getItem("token")}`
           },
