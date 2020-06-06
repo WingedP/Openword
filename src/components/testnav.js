@@ -73,23 +73,21 @@ collapseOnSelect expand="lg" bg="" variant="light">
     </Form>
 
 
-      <Nav.Link className="testnavlogin"><Link to='/login'><i style={{color:"black"}} class=" fas fa-sign-in-alt"></i></Link></Nav.Link>
-      <Nav.Link  className="testnavlogout" onClick={handleLogout}><i  style={{color:"black"}} class=" fas fa-sign-out-alt"></i></Nav.Link>
+      <Nav.Link className="testnavlogin"><Link to='/login'><i  class=" loginIcon fas fa-sign-in-alt"></i></Link></Nav.Link>
+      <Nav.Link  className="testnavlogout" onClick={handleLogout}><i   class=" fas fa-sign-out-alt"></i></Nav.Link>
       
-      <NavDropdown alignRight={false} className="dropdownProfile" 
-    title={<span><i class="testnavuserIcon fas fa-user-circle"></i>
-</span>} id="collasible-nav-dropdown ">
-      <div className="dropdownItemlist"> 
-
+    <NavDropdown alignRight={false} className="dropdownProfile" 
+    title={<span><i class="testnavuserIcon fas fa-user-circle"></i></span>} id="collasible-nav-dropdown ">
+    <div className="dropdownItemlist"> 
       <NavDropdown.Item className="">
         <Link to='/users/me'>Profile</Link>
         </NavDropdown.Item>
         <NavDropdown.Item className="" href="#action/3.2">History</NavDropdown.Item>
         <NavDropdown.Item className="" href="#action/3.3">Something</NavDropdown.Item>
         </div>
-      </NavDropdown>
+    </NavDropdown>
 
-      <Nav.Link>{(props.user && props.user.name || " guest")}</Nav.Link>
+      <Nav.Link className="userNameNav">{(props.user && props.user.name || " guest")}</Nav.Link>
     </Nav>
     
   </Navbar.Collapse>

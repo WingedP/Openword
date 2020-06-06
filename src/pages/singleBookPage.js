@@ -106,21 +106,78 @@ const handleReviewChange=(e)=>{
 
 
 if(singleBookData===null && singleBookData.data===null) return<div>Loading</div>;
+console.log(singleBookData)
   return (
     <div className="bookdata">
 
       <Container fluid className="containerBookdata">
-<div>
+
+<Row className="booktitle" > 
+
+<img  className="singleBookIcon" src="/images/6.png"></img>    
+<span className="singleBookDatatitle">
+  <div className="booktitleDecor"></div>
+<div className="booktitleDecor2"></div>
+  {singleBookData.title}</span>  
+</Row>
+
+<Row>   
+<div className="singlebookthumbnailWrapper">
  <img className="singlebookthumbnail" src={singleBookData.thumbnail}></img>
 </div>
 
-<div className="detailsinglebook" style={{border:"1px solid black"}}>
-  <div><span style={{fontSize:"1.4rem"}}>Title:</span> {singleBookData.title}</div>    
-    <div><span style={{fontSize:"1.4rem"}}>Available until: </span>{singleBookData.until}</div>  
-    <div><span style={{fontSize:"1.4rem"}}>Book's description:</span> {singleBookData.description}</div>  
-    <div>Book can be borrowed for: {singleBookData.price} VND</div>           
-         <div><button onClick={()=>{setShowBorrowModal(true)}}> Borrow? </button></div>
+<div className="detailsinglebook">
+
+  <div className="line">
+    
+  <i style={{color:"gray", fontSize:"1.9rem", marginRight:"7px"}} class="markIcon fas fa-caret-right"></i>    
+<span className="line1">Title:</span> 
+
+ {singleBookData.title} 
+
+</div>    
+
+  <div className="line">
+  <i style={{color:"gray", fontSize:"1.9rem", marginRight:"7px"}} class="markIcon fas fa-caret-right"></i>    
+    <span  className="line1">Author:</span> {singleBookData.author}</div>    
+
+    <div className="line">
+    <i style={{color:"gray", fontSize:"1.9rem", marginRight:"7px"}} class="markIcon fas fa-caret-right"></i>    
+    <span className="line1">Rating:</span> {singleBookData.ratingAverage}</div>    
+
+  <div className="line">
+  <i style={{color:"gray", fontSize:"1.9rem", marginRight:"7px"}} class="markIcon fas fa-caret-right"></i>    
+<span className="line1">Owned by: </span>{singleBookData.owner && singleBookData.owner.name}
+<span>          <img className="singleBookPageuserAvatarImage" src="/images/avatar/1.jpg"></img>
+</span>
+</div>  
+
+  <div className="line">
+  <i style={{color:"gray", fontSize:"1.9rem", marginRight:"7px"}} class="markIcon fas fa-caret-right"></i>    
+<span className="line1">Available: </span> {singleBookData.availability == true ? "yes" : "no"}  </div>
+
+    <div className="line">
+  <i style={{color:"gray", fontSize:"1.9rem", marginRight:"7px"}} class="markIcon fas fa-caret-right"></i>    
+<span className="line1">until: </span>{singleBookData.until}</div>  
+
+<div className="line">
+  <i style={{color:"gray", fontSize:"1.9rem", marginRight:"7px"}} class="markIcon fas fa-caret-right"></i>    
+<span className="line1">Description: </span>{singleBookData.description}</div>  
+
+
+    <div className="line">Borrowing price: <span className="pricebox" > <span className="pricebox2" >{singleBookData.price}</span>   VND  </span></div>           
+    
+    
+    <button onClick={()=>{setShowBorrowModal(true)}} className="borrowbtn"><div className="borrowbtn2"></div>Borrow?</button>
+
+           
+           {/* <button onClick={()=>{setShowBorrowModal(true)}}> Borrow? </button> */}
+           
+        
          </div> 
+
+         </Row>
+
 
          <div className="reviewSection">
 <div  style={{fontSize:"1.4rem"}}>Review:</div>       
@@ -187,17 +244,19 @@ function MyVerticallyCenteredModal(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
+          Openword Librarian:
+            <div className="librarianchat">"So you want to borrow this book. Ready to process?"</div>
+
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+
+      <Modal.Body className="borrowModalBody">
+        <img className="modalborrowImg" src="/images/background/test3.png"></img>
+        <img className="modalborrowImg2" src="/images/library.jpg"></img>
+
+  
       </Modal.Body>
+
       <Modal.Footer>   
         {/* <Link to='/users/books/borrowingform/:id'><Button>Request this Item</Button></Link> */}
         <Link to={`/users/books/borrowingform/${id}`}><Button>Request this Item</Button></Link>

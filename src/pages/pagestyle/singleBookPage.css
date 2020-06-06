@@ -31,9 +31,17 @@
     box-shadow: 0px 2px 5px 8px rgba(158,158,158,1);
 } */
 
+.singlebookthumbnailWrapper{
+    width: 32rem;
+    height: 32em;
+    background: linear-gradient(to right, #396e83, #f29492);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .singlebookthumbnail{
     box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.75);
-    width: 15rem;
+    width: 18rem;
     /* transform: rotate(-45deg); */
     /* margin-left: 6rem; */
     margin-right: 3rem;
@@ -47,17 +55,235 @@
 .bookdata{
     /* border: 1px solid black; */
 }
+.pricebox{
+    background-color: grey;
+}
+.pricebox2{
+    background-color: hotpink;
+}
 .containerBookdata{
     margin-top: 3rem;
-    display: flex;
  /* border: 1px solid black; */
  /* justify-content:space-between; */
 
 }
-.detailsinglebook{
-    box-shadow: 0px 2px 5px 1px rgb(107, 106, 106);
-    padding: 1rem;
+
+.singleBookIcon{
+width: 5rem;
+margin-right: 2rem;
 }
+.singleBookDatatitle{
+    position: relative;
+}
+.booktitleDecor{
+    width: 3rem;
+    height: 3rem;
+position: absolute;
+right: -0.5rem;
+top: 1rem;
+background-color: rgba(216, 112, 147, 0);
+box-shadow: 6px 7px 0px 0px rgba(219,0,80,1);
+}
+.booktitleDecor2{
+    width: 3rem;
+    height: 3rem;
+position: absolute;
+left: -0.4rem;
+top:0.5rem;
+background-color: rgba(216, 112, 147, 0);
+box-shadow: -6.3px -6.3px 0px 0px rgba(219,0,80,1);
+}
+
+
+.booktitle{
+    position: relative;
+    font-size: 3rem;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    padding-left: 30%;
+    margin-bottom: 2rem;
+}
+.detailsinglebook{
+/* border: 1px solid black; */
+ /* box-shadow: 0px 2px 5px 1px rgb(107, 106, 106); */
+    margin-left: 2rem;
+    padding: 1rem;
+    width: 55%;
+}
+
+@media only screen and (max-width: 1125px) {
+.detailsinglebook {
+        width: 44%;
+}
+.line2{
+    color: rgb(230, 24, 24);
+    font-size: 20px;
+    margin-right: 3rem;
+}
+
+
+}
+
+@media only screen and (max-width: 940px) {
+    .detailsinglebook {
+            width: 30%;
+    }
+    .line2{
+        color: rgb(230, 24, 24);
+        font-size: 10px;
+    }
+    
+    
+    }
+
+.librarianchat{
+    margin-left: 3rem;
+    color: rgb(238, 238, 238);
+    font-size: 24px;
+    background-color: rebeccapurple;
+    border-radius: 30px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.borrowModalBody{
+    overflow: hidden;
+    position: relative;
+    height: 40vh;
+    background-color: black;
+    padding: 0;
+}
+.modalborrowImg2{
+    filter: grayscale(100%);
+    position: absolute;
+    opacity: 0.8;
+}
+.modalborrowImg{
+    position: absolute;
+    z-index: 1;
+    left: 35%;
+    width: 14rem;   
+    height: 14rem;
+    border-radius: 50%;
+    background-color: rgb(230, 221, 223);
+    border: 1px solid rgb(117, 116, 116);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.borrowbtn{
+    margin-top: 3rem;
+    margin-left: 2rem;
+    width: 8rem;
+    height: 2rem;
+    position: relative;
+border: 1px solid gray;
+box-shadow: -19px -15px 0px 0px rgba(240, 70, 70, 0.233);
+transition: 0.3s;
+font-size: 23px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.borrowbtn2{
+    width: 8rem;
+    height: 2rem;
+    left: 1rem;
+    top: 1.3rem;
+    position: absolute;
+    background-color: rgba(0, 128, 107, 0.205);
+    transition: 0.3s;
+
+}
+.borrowbtn:hover{
+    box-shadow: 10px 5px 0px 0px rgba(247, 171, 7, 0.575);
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.borrowbtn:hover >  .borrowbtn2   {
+    background-color: rgba(247, 63, 30, 0.205);
+    transform: translate(-30px, -38px);
+    transition: 0.3s;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.singleBookPageuserAvatarImage{
+        border: 1px solid rgb(117, 116, 116);
+        border-radius: 50%;
+        width: 4rem;
+        height: 4rem;
+    } 
+
+.markIcon{
+    transition: 0.15s;
+}
+.line{
+    border-bottom: 1px solid gray;
+    margin-bottom: 7px;
+    padding-right: 3rem;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    font-size: 21px;
+    color: rgb(82, 28, 28);
+}
+.line1{
+    position: absolute;
+    left: 2rem;
+    color: rgb(90, 88, 88);
+    font-weight: normal;
+    font-size: 1.3rem;
+}
+.line2{
+    color: rosybrown;
+    font-size: 20px;
+    margin-right: 17rem;
+}
+.line:hover{
+    font-weight: bold;
+
+    background-color: rgb(241, 225, 233);
+}
+.line:hover > .markIcon{
+    transition: 0.15s;
+    transform:  scale(1.3) translate(40%,0%);
+    color: rgb(184, 14, 8) !important;
+}
+
+
 .reviewContainer{
     margin-top: 1.5rem;
     display:inline-block;

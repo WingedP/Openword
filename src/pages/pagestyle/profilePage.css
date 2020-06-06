@@ -140,9 +140,13 @@ width: 50rem !important;
 background-color: violet;
 display: flex;
 }
-/* .cardImg{
-    width: 16rem;
-} */
+.cardImg{
+height: 20rem;
+}
+.cardImgChangeView{
+    height: auto;
+    width: 8.7rem;
+}
 
 .profileFormControl{
 height:"2rem";
@@ -153,6 +157,13 @@ background-color: teal !important;
 .cardhere{
     min-width: 14rem;
     margin: 0rem 2rem 4rem 0rem;
+    border: none !important;
+}
+
+.cardhereViewChange{
+    width: fit-content;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
 }
 
 .card-img-overlay{
@@ -197,12 +208,51 @@ transition: 0.2s;
 
 }
 
+.profileBookCardBodyViewChange{
+    padding: 0;
+    width: 8.7rem;
+    text-align: center;
+    /* border: 1px solid rgb(136, 135, 135); */
+}
 .profileBookCardBody{
-    border: 1px solid rgb(136, 135, 135);
+    /* border: 1px solid rgb(136, 135, 135); */
+    padding:0;
     height: 5rem;
+    background-color: rgb(241, 240, 232);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+
+.profileRatingViewChange{
+    display: none;
+}
+
+.profileCardTitleViewChange{
+    font-size: 13px;
+}
+.profileCardTitle{
+
+font-size: 18px;
+   color: rgb(20, 173, 173); 
+}
+.profileCardAuthorViewChange{
+    display: none;
+}
+.profileCardAuthor{
+    padding-top: 7px;
+    font-size: 17px;
+   color: rgb(38, 133, 77); 
+}
+.profileCardAuthor2{
+    color: black;
+    font-weight: bold;
+}
 .deletebookbtn{
+    z-index: 2;
     margin-top: 1rem;
     color: ivory;
     position: absolute;
@@ -217,3 +267,43 @@ transition: 0.2s;
     /* border: 1px solid black; */
     display: flex;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

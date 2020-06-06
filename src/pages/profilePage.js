@@ -7,6 +7,7 @@ import '../pages/pagestyle/profilePage.css';
 import Select from 'react-select';
 
 export default function (props) {
+  const [viewChange, setViewChange] = useState(false);
   const history = useHistory();
   const categoryArray = props.cat;
   let [myCollection, setMyCollection] = useState([]);
@@ -26,13 +27,16 @@ export default function (props) {
     getUsersBook()
   }, []);
 
+
+  const changeCardView =()=>{viewChange==false ? setViewChange(true) : setViewChange(false) }
+
   const getUsersBook = async () => {
     const res = await fetch(process.env.REACT_APP_SERVER + `/books/mybook`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${localStorage.getItem("token")}`
-      },
+      },  
     });
     if (res.status === 200) {
       const body = await res.json();
@@ -61,23 +65,40 @@ const deleteUsersBook = async (id) => {
   let renderUserCollection = myCollection.length === 0 ?
     <div>You don't have any book yet, upload some!</div>
     : myCollection.map(el => {
-
-      // console.log(el.id)
       return (
 
-        <Card className="cardhere"  onClick={() => {history.push(`./books/${el.id}`);}} key={el.id}>
+        <Card 
+        // className="cardhere"
+        className={viewChange==false ?"cardhere" : "cardhereViewChange"} 
 
+          onClick={() => {history.push(`./books/${el.id}`);}} key={el.id}>
           <Card.Img
-            className="cardImg" variant="top" src={el.thumbnail} />
+            className={viewChange == false ? "cardImg": "cardImgChangeView" }  
+            variant="top" src={el.thumbnail} />
               <Card.ImgOverlay>
-            <button id="deletebookbtn" className="deletebookbtn" onClick={() => {
+            <button  id="deletebookbtn" className="deletebookbtn" 
+   
+            onClick={() => {
               setDeletedId(el.id)
-              setShowDeleteModal(true)
-            }}>
+              setShowDeleteModal(true)}}
+            
+            
+            >
               <i style={{ fontSize: "2rem" }} class=" deleteIcon far fa-times-circle"></i></button>
            </Card.ImgOverlay>
-          <Card.Body className="profileBookCardBody">
-            <Card.Title>Title: {el.title}</Card.Title>
+          <Card.Body 
+          className={viewChange==false ?"profileBookCardBody" : "profileBookCardBodyViewChange"} 
+         >
+            <div
+ className={viewChange==false ?"profileCardTitle" : "profileCardTitleViewChange"} 
+>{el.title}</div>
+            <div
+         className={viewChange==false ?"profileCardAuthor" : "profileCardAuthorViewChange"} 
+
+        > by <span className="profileCardAuthor2">{el.author}</span></div>  
+          <div 
+          className={viewChange==false ? "profileRating" : "profileRatingViewChange"} 
+ >{el.ratingAverage}</div>
           </Card.Body>
 
           {/* <button onClick={()=>{deleteUsersBook(el.id)}}
@@ -87,8 +108,7 @@ const deleteUsersBook = async (id) => {
 </button> */}
 
 
-
-        </Card>
+</Card>
 
 
 
@@ -240,14 +260,20 @@ You sure you want to remove this book from your collection?
           <div><i style={{ fontSize: "2rem" }} class="fas fa-book"></i> Books owned: </div>
 
           <div><i style={{ fontSize: "2rem" }} class="fas fa-address-book"></i> Books borrowed: </div>
+          <div onClick={()=>{changeCardView();
+          console.log("viewChange", viewChange)
+        }}><i style={{ fontSize: "2rem" }} class="fas fa-th-list"></i>  </div>
 
+          
           <button className="userProfileAddBook" onClick={() => setShow(true)}> Add book
             <i style={{ marginLeft: "0.5rem", fontSize: "2rem" }} class="fas fa-folder-plus"></i> </button>
         </div>
       </Container>
 
-      <Container className="renderUserCollection">
-        <Row className="renderUserCollectionRow" xs={2} sm={3} md={6} lg={12}>
+      <Container  className="renderUserCollection">
+        <Row className="renderUserCollectionRow"
+         xs={2} sm={3} md={6} lg={12}
+         >
           {renderUserCollection}
         </Row>
       </Container>

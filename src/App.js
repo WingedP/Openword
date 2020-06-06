@@ -74,20 +74,12 @@ function App() {
     <div className="App">
       <Sidebar/>
       <Switch>
-        {/* <Route path="/" user={user} setUser={setUser} exact component={HomePage}/> */}
-        {/* <Route path="/login" exact component={LoginPage} /> */}
-        <Route path="/" exact render={() => 
-        (<HomePage 
-        cat={cat} setCat={setCat}
-        user={user} setUser={setUser}/>)}
-        
-        /> 
+
+        <Route path="/" exact render={() => (<HomePage cat={cat} setCat={setCat}  user={user} setUser={setUser}/>)} /> 
         <Route path="/login" exact render={() => (<LoginPage user={user} setUser={setUser}/>)}/> 
-        <Route path="/signup" exac  t component={SignupPage}/>
-        <Route path="/users/me" exact render={() =>(<ProfilePage
-        cat={cat} setCat={setCat}
-        user={user} setUser={setUser}/>)}/>
-        <Route path="/explore" exact component={Explore}/>
+        <Route path="/signup" exact component={SignupPage}/>
+        <Route path="/users/me" exact render={() =>(<ProfilePage  cat={cat} setCat={setCat}  user={user} setUser={setUser}/>)}/>
+        <Route path="/explore" exact render={() =>(<Explore cat={cat} setCat={setCat} user={user} setUser={setUser}/>)}/>
         <Route path="/users/books/:id" exact render={(props)=><SingleBookPage {...props}/>}/>
         <Route path="/users/me/history" exact render={(props)=>(<UserHistoryPage
         user={user} setUser={setUser}

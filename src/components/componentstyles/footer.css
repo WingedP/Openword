@@ -1,0 +1,109 @@
+.footerz{
+    margin-top: 5rem;
+    padding-top: 2rem;
+    width: 100%;    
+     z-index: 3;
+        color: ivory;
+        background-color: rgb(58, 59, 57);
+    }
+    
+    .sharing{
+        position: relative;
+        /* border: 2px solid white; */
+        font-size: 30px;    
+        text-align: center;
+        margin-bottom: 4.4rem;
+    }
+
+.sharingbtns{
+    margin-top: 0.4rem;
+}
+.footersupport{
+border-left: 0.3rem solid rgb(21, 185, 226);
+padding-left: 5px;
+}
+/* .donatebtn{
+    background-color: blanchedalmond;
+} */
+.donatebtn{
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(100, 9, 27);
+    padding: 0px 0px 3px 0px;
+    
+}
+.donatebtn2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    background-color: rgb(245, 26, 70);
+   
+}
+.heartdonate{
+    color: ivory;
+    padding-right: 6px;
+}
+.footerLetter{
+    font-size: 2rem;
+    color: rgb(146, 160, 221);
+    padding-right: 2px;
+}
+.footerlogo{
+    width: 13rem;
+}
+.footerForm{
+    display: flex;
+}
+.footerflourish{
+    position: absolute;
+    bottom: -5rem;
+    left: 45%;
+    height: 7rem;
+    /* border: 1px solid black; */
+    padding: 0;
+}
+
+.form1{
+    margin: 0 !important;
+    padding: 0;
+}
+.emailpass{
+    width: 10rem;
+    border-radius: 0px;
+    background-color: rgb(209, 214, 214);
+}
+.emailpass:focus{
+    background-color: rgb(241, 239, 237);
+}
+
+.submitbtn{
+    border: none;
+    border-radius: 5px;
+    margin-left: 0.5rem;
+    height: 2.5rem;   
+    width: 3rem;
+    padding: 0px 0px 3px 0px;
+    background-color: rgb(156, 108, 108);
+}
+.submitbtn2{
+    border-radius: 5px;
+    padding-bottom: 8px;
+    width: 3rem;
+    background-color: rgb(216, 181, 181);
+}
+
+.footerContactus{
+    padding: 0;
+    /* border: 1px solid ivory; */
+}
+.footerFormControl{
+width: fit-content  ;
+/* border: 1px solid ivory; */
+margin-right: 4rem;
+}

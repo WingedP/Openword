@@ -200,10 +200,13 @@ Forget it . . . <i style={{fontSize:"20px"}} class="fas fa-angle-double-right"><
 
 
 <Container className="bookslide">
+
 <Row className="availablerow"> <div>  
 {/* <img  className="availablerowimg" src="/images/6.png"></img> */}
 <img  className="availablerowflourish" src="/images/flourishes/2.png"></img>
-        AVAILABLE FOR BORROWING:  </div></Row> 
+        AVAILABLE FOR BORROWING:  
+        <div className="fromusertouser">from users to users</div>
+        </div></Row> 
 
 
 {/* <Swiper {...params}>
@@ -264,9 +267,17 @@ Forget it . . . <i style={{fontSize:"20px"}} class="fas fa-angle-double-right"><
 </Container>
 
 
-<Row className="availablerow"> <h4>   Like it? There's more.  
-        <Link to='/explore'><button className="viewallbtn">View all.</button></Link>
+<Row className="availablerow"> 
+<h4>Like it? There's more.  
+
+{/* <Link to='/signup'> <Button className="viewallbtn"><div className="viewallbtn1"></div>View all</Button></Link> */}
+<Link to='/explore'><button className="viewallbtn"><div className="viewallbtn2"></div>View all.</button></Link>
+
+
          </h4> 
+
+{/* <Link to='/signup'> <Button className="signupbtn"><div className="signupbtn1"></div>Sign up</Button></Link> */}
+
  </Row> 
 
 
