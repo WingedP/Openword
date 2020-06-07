@@ -71,11 +71,11 @@ const getSingleBook = async () => {
   }    
 
 let renderGetReviews = showReviews.length === 0 
-? <div>no review here</div>  
+? <div className="noReviewBox">There's no review here.</div>  
 : showReviews.map(el=>{
   return(
 <Container className="reviewContainer">
-  <div>  {el.title} </div>
+  <div  className="reviewContainer1">  {el.title} </div>
   <div>  {el.content} </div>
   <div>  {el.rating} </div>
 <div>by User: {el.user.name}</div>
@@ -179,14 +179,14 @@ console.log(singleBookData)
          </Row>
 
 
-         <div className="reviewSection">
-<div  style={{fontSize:"1.4rem"}}>Review:</div>       
-    {renderGetReviews}</div>
+
 
 </Container>
 
-
-  
+<Container fluid className="reviewSectionWrapper">
+<div className="reviewSection">
+<div  className="reviewSection1" style={{fontSize:"1.4rem"}}>Review:</div>       
+{renderGetReviews}</div>
       <div className="writereviewsection">
       <Form onChange={handleReviewChange} onSubmit={postReview}>
       <Form.Group controlId="formBasicEmail">
@@ -199,23 +199,17 @@ console.log(singleBookData)
 
     <Form.Control name="content" as="textarea" rows="2" />
       </Form.Group>
-
 <StarRating/>
 
-      {/* <Form.Group controlId="exampleForm.ControlSelect1">
-    <Form.Label>Rating:</Form.Label>
-    <Form.Control name="rating" as="select">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </Form.Control>
-    </Form.Group> */}
       
       <Button variant="primary" type="submit">Submit</Button>
       </Form>
       </div>
+</Container>
+
+
+
+
 
     <MyVerticallyCenteredModal
         show={showBorrowModal}

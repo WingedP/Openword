@@ -52,10 +52,23 @@ return (
   </Container>
 
 <Container className="homepagezBannertest">
+
 <img className="testbannerimg" src="/images/read.jpg"></img>
-<Container className="bannerintro" >Hi, We are 
-<div className="bannerintrotitle" >Openword.</div>
-<div>We bring <span className="readerspan">readers</span><br/> and <span className="readerspan">books</span> <div>together.</div> </div>
+<div className="openwordshadow" > </div>
+<Container className="bannerintro">
+        <Container  className="bannerintro1">Hi, We are </Container>
+
+ <img className="logoopenword" src="/images/logoopenword.jpg"></img>
+
+<div className="bannerintrotitle" >
+<span className="letterO">
+<span className="letterOshadow">0</span>
+<img className="openwordIcon" src="/images/openword.png"></img> 
+0</span> penword.</div>
+
+
+<div  className="bannerintro2">We bring <span className="readerspan">readers</span><br/> and <span className="readerspan">books</span> <div>together.</div> </div>
+
 <Button className="aboutusbtn">
 <div className="aboutusbtn1"></div>
 About us</Button>

@@ -20,7 +20,8 @@
 }
 .homepagezlinks{
     /* border: 1px solid black; */
-    margin-top: 8rem;
+    /* border-bottom: 1px solid rgb(194, 192, 192); */
+    margin-top: 6rem;
     padding: 1rem  6rem 1rem 11em  !important ;
     position: relative;
     z-index:2;
@@ -131,8 +132,15 @@
 
     overflow: hidden;
 }
+.openwordIcon{
+    position: absolute;
+    width: 4rem;
+    left: 3px;
+    bottom: 2.8rem;
+}
 .testbannerimg{
-    left: 8rem;
+    width: 65rem;
+    left: 14rem;
     height: 48rem;
     position: absolute;
     bottom:-6rem;
@@ -141,19 +149,95 @@
     z-index: 3;
     position: absolute;
     font-size: 45px;
-    top: 4rem;
+    top: 1rem;
     color: gray;
     
 
 
 }
-.bannerintrotitle{
-    font-size: 65px;
-    color: black;
-    font-family: 'Old Standard TT', serif;
+.bannerintro2{margin-top: 9rem;}
+.letterOshadow{
+position: absolute;
+/* color: linear-gradient(to right, #114357, #f29492); */
+background: -webkit-linear-gradient( #114357, #f29492);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+opacity: 0.5;
+left: 0.3rem;
+top:-2.8rem;
+font-size: 12rem;
+}
+.letterO{
+    /* border: 1px solid black; */
+    position: relative;
+    font-size: 8.5rem;
+    background: -webkit-linear-gradient( #141414, #1d0807);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
 
+.openwordshadow{
+    position: absolute;
+    width: 25rem;
+    height: 4rem;
+    bottom: 65%;
+    left: 2.3rem;
+        /* box-shadow: -1px 10px 43px -4px rgba(245, 160, 139, 0.596); */
+        box-shadow: -1px 20px 43px -4px rgba(245, 160, 139, 0.596);
 
 }
+.bannerintrotitle{
+    /* box-shadow: -1px 10px 43px -4px rgba(232,201,0,1); */
+    /* box-shadow: 0 4px 21px -2px gray; */
+
+    font-size: 75px;
+    color: black;
+    font-family: 'Old Standard TT', serif;
+    position: absolute;
+    top: 2rem;
+    
+
+}
+.logoopenword{
+    display: none;
+}
+@media only screen and (max-width: 500px) {
+    /* For mobile phones: */
+.bannerintrotitle {
+        height: 1rem !important;
+        overflow: hidden;
+        margin: 0;
+        display: none;
+}
+.openwordshadow{
+display: none;
+}
+.logoopenword{
+    display: block;
+    width: 80%;
+    padding: 0;
+    margin: 0;
+}.bannerintro2{margin-top: 1rem;}
+.homepagezlinks{
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+    padding: 1rem  6rem 1rem 11em  !important ;
+    position: relative;
+    z-index:2;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    }
+.aboutusbtn{
+    margin-left: 7rem;
+}
+.testbannerimg{
+width: 40rem;
+height: 30rem;
+top: 17rem;
+left: 6rem;
+}
+  }
+
 .readerspan{
     color: rgb(73, 52, 52)
 }

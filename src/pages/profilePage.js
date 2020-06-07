@@ -5,6 +5,8 @@ import { Form, Button, Container, Modal, Row, Col, Card, Badge, FormControl } fr
 import { Link, useHistory } from 'react-router-dom';
 import '../pages/pagestyle/profilePage.css';
 import Select from 'react-select';
+import Moment from 'react-moment';
+
 
 export default function (props) {
   const [viewChange, setViewChange] = useState(false);
@@ -214,8 +216,7 @@ You sure you want to remove this book from your collection?
 
 
         <div className="profileAboutMe">
-          <i style={{ fontSize: "2.2rem", color: "ivory", float: "right", paddingRight: "5px", paddingTop: "5px" }} class="fas fa-user-edit"></i>
-
+          <i style={{ fontSize: "2.2rem", color: "black", float: "right", paddingRight: "5px", paddingTop: "5px" }} class="fas fa-user-edit"></i>
           <div style={{ marginTop: "4rem", backgroundColor: "gray" }}>About: {(props.user && props.user.about)}</div>
           <div style={{ marginTop: "0rem", backgroundColor: "gray" }}>Gender: {(props.user && props.user.gender)}</div>
           <div style={{ marginTop: "0rem", backgroundColor: "gray", overflow: "hidden" }}>Email: {(props.user && props.user.email)}</div>
@@ -226,8 +227,14 @@ You sure you want to remove this book from your collection?
 
 
         <div className="userProfile">
-          <div className="profileUserName">{(props.user && props.user.name || " guest")}</div>
 
+  <div className="profileUserName">  
+<div><img className="profileOpenwordIcon" src="/images/openword.png"></img> 
+ {(props.user && props.user.name  || " guest")}</div>
+ <div className="userCreatedAt">Joined  Openword since <Moment format="MMM YYYY"  date={props.createAt} withTitle/></div>
+
+
+</div>
           <div className="userProfileMenu">
             <Form style={{ position: "relative" }} inline>
               <FormControl className="profileFormControl" type="text" placeholder="    Search your collection" className="mr-sm-2" />
@@ -253,7 +260,12 @@ You sure you want to remove this book from your collection?
         </div>
 
       </Container>
-
+      <Container fluid className="useAboutSection"> 
+                <img className="featherpenIcon" src="/images/featherpen.png"></img>
+                <div className="aboutMe">{(props.user && props.user.about)}
+           Book reviews are sorted by star, and sorted by length of review within each star level, under the assumption that longer reviews are of more interest to readers, however, each column is toggleable and so one can sort by arbitrary combinations of date/title/author/review/rating/etc.  
+     </div>
+        </Container>
       <Container className="mycollectionWrapper">
         <div className="mycollection">
           <div> <i style={{ fontSize: "2rem" }} class="fas fa-box-open"></i>  Your collection: </div>

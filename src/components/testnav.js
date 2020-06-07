@@ -58,7 +58,16 @@ collapseOnSelect expand="lg" bg="" variant="light">
 {/* <Navbar.Brand href="#home" className="testnavLogo">Openword</Navbar.Brand> */}
   
   <Link to='/'>
-  <Navbar.Brand  className="testnavLogo">Openword</Navbar.Brand>
+  <Navbar.Brand  className="testnavLogo">Openword
+  <img className="navbaropenwordIcon" src="/images/openword.png"></img> 
+
+  </Navbar.Brand>
+
+  {/* <Navbar.Brand  className="brandIcon">
+      <img className="navbaropenwordIcon" src="/images/openword.png"></img> 
+  </Navbar.Brand> */}
+
+
   </Link>
 
 
@@ -76,18 +85,27 @@ collapseOnSelect expand="lg" bg="" variant="light">
       <Nav.Link className="testnavlogin"><Link to='/login'><i  class=" loginIcon fas fa-sign-in-alt"></i></Link></Nav.Link>
       <Nav.Link  className="testnavlogout" onClick={handleLogout}><i   class=" fas fa-sign-out-alt"></i></Nav.Link>
       
-    <NavDropdown alignRight={false} className="dropdownProfile" 
-    title={<span><i class="testnavuserIcon fas fa-user-circle"></i></span>} id="collasible-nav-dropdown ">
-    <div className="dropdownItemlist"> 
-      <NavDropdown.Item className="">
-        <Link to='/users/me'>Profile</Link>
-        </NavDropdown.Item>
-        <NavDropdown.Item className="" href="#action/3.2">History</NavDropdown.Item>
-        <NavDropdown.Item className="" href="#action/3.3">Something</NavDropdown.Item>
-        </div>
-    </NavDropdown>
+
 
       <Nav.Link className="userNameNav">{(props.user && props.user.name || " guest")}</Nav.Link>
+      <NavDropdown alignRight={false} className="dropdownProfile" 
+    title={<span><i class="testnavuserIcon fas fa-user-circle"></i></span>} id="collasible-nav-dropdown ">
+    <div className="dropdownItemlist"> 
+      <NavDropdown.Item href="https://localhost:3000/users/me" className="itemDropdown">
+      Profile
+      <i style={{marginLeft:"4rem" }} class="fas fa-book"></i>
+      <Link className="dropdownLink" to='/users/me'></Link>
+
+        </NavDropdown.Item>
+        <NavDropdown.Item className="itemDropdown" href="#action/3.2">
+        History
+         <i style={{marginLeft:"3.7rem" }} class="fas fa-clipboard-list"></i>
+        </NavDropdown.Item>
+        <NavDropdown.Item className="itemDropdown" href="#action/3.3">Setting
+        <i style={{marginLeft:"3.6rem" }} class="fas fa-cog"></i> 
+</NavDropdown.Item>
+        </div>
+    </NavDropdown>
     </Nav>
     
   </Navbar.Collapse>

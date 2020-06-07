@@ -48,12 +48,16 @@ top: 0;
   right: 0;
 }
 
+.dropdown-item{
+  padding: 0;
+}
 .dropdown-item.active,.dropdown-item:hover, .dropdown-item:active{
   background-color: rgb(230, 205, 226);
 }
 
 .testnavLogo{
   margin-left: 10rem;
+  position: relative;
 }
 .testnavheaderlogo{
   position: absolute;
@@ -66,6 +70,23 @@ top: 0;
   width: 5rem;
   z-index: 3;
 
+}
+.brandIcon{
+  width: 2rem;
+  height: 2rem;
+   border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black; 
+}
+.navbaropenwordIcon{
+  position: absolute;
+  width: 4.4rem;
+right: -3.4rem;
+top: -0.8rem;
+
+}
+.dropdown-menu.show{
+  left: -8rem;
 }
 
 
@@ -94,8 +115,8 @@ border-bottom: 1px solid gainsboro;
   transition: all .3s ease-in-out;
 }
 .dropdownProfile{
-  padding: 0 !important;
-  margin: 0rem  4rem 0rem 0rem      ;
+  padding: 0.3rem 0rem  0rem 0rem !important;
+  margin: 0rem 0rem 0rem 0rem      ;
 }
 .dropdownItemlist{
   background-color: rgb(215, 223, 240);
@@ -114,6 +135,15 @@ padding: 0;
   color: rgb(19, 83, 85);
 }
 
+.itemDropdown{
+  font-size: 1.2rem;
+  padding-left: 1.2rem;
+}
+.dropdownLink{
+  color: black;
+  padding-left: 7rem;
+  width: 100px !important;
+}
 .userNameNav{
 font-size: 20px;
 color: rgb(11, 109, 68);

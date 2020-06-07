@@ -3,11 +3,61 @@
 .exploreCard{
 margin-right: 1.5rem;
 margin-bottom: 1.5rem;
+border: 1px solid rgb(151, 150, 150);
+border-radius: 0px;
+transition:.2s
+
+}
+.exploreCard:hover > .exploreCardImg{
+    /* transform: scale(1.05); */
+    transition:.2s;
+filter: brightness(0.4);
+
 }
 
+.exploreCardImg{
+    height: 20rem;
+    border: none;
+    border-radius: 0px;
+    padding:0px;
+
+    }
+.exploreBookIcon{
+    width: 5rem;
+    position: absolute;
+    bottom: 10rem;
+    right: -1rem;
+    opacity: 0;
+    /* transition: 0.15s; */
+}
+.exploreBookIcon2{
+    width: 3rem;
+    position: absolute;
+    bottom: 10rem;
+    right: -1rem;
+    opacity: 1;
+    /* transition: 0.15s; */
+
+}
+.exploreCardImg2:hover > .exploreBookIcon {
+    /* transition: 0.15s; */
+opacity: 1;}
+
+.exploreCardImg2:hover > .exploreBookIcon2 {
+    /* transition: 0.15s; */
+    opacity: 0;
+    ;}
+
+.exploreCardBody{
+    text-align: center;
+}
+.renderExploreAllBooksContainer{
+    background-color: gainsboro;
+}
 .renderExploreAllBooksRow{
-    padding-left: 2rem;
-    margin-top: 15vh;
+    padding-left: 3rem;
+    padding-top: 3rem;
+    margin-top: 7.5vh;
     /* border: 1px solid black; */
 
 }

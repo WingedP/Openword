@@ -32,8 +32,9 @@
 } */
 
 .singlebookthumbnailWrapper{
-    width: 32rem;
-    height: 32em;
+    width: 30rem;
+    height: 30em;
+    margin-left: 2rem;
     background: linear-gradient(to right, #396e83, #f29492);
     display: flex;
     justify-content: center;
@@ -48,13 +49,16 @@
 }
 
 .reviewSection{
-    /* border: 1px solid black; */
+    border: 1px solid rgb(153, 149, 149);
     margin-left: 2rem;
     width: 30rem;
     }
-.bookdata{
-    /* border: 1px solid black; */
+.reviewSection1{
+    border-bottom: 1px solid rgb(153, 149, 149)   ;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
+
 .pricebox{
     background-color: grey;
 }
@@ -68,6 +72,11 @@
 
 }
 
+.noReviewBox{
+    height: 5rem;
+    background-color: honeydew;
+    padding-left: 2rem;
+}
 .singleBookIcon{
 width: 5rem;
 margin-right: 2rem;
@@ -98,11 +107,17 @@ box-shadow: -6.3px -6.3px 0px 0px rgba(219,0,80,1);
 .booktitle{
     position: relative;
     font-size: 3rem;
-    /* border: 1px solid black; */
+    border: 1px solid rgb(185, 182, 182);
+    box-shadow: 0px 0px 9px 3px rgb(145, 145, 142);   
     display: flex;
     align-items: center;
     padding-left: 30%;
-    margin-bottom: 2rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    margin-bottom: 2rem;   
+    margin-left: 2rem;   
+    margin-right: 2rem;   
+    background: linear-gradient(to right, #d9a7c756, #fffcdcc0); 
 }
 .detailsinglebook{
 /* border: 1px solid black; */
@@ -284,35 +299,23 @@ align-items: center;
 }
 
 
+.reviewContainer1{
+    background-color: rgb(240, 169, 204);
+}
 .reviewContainer{
-    margin-top: 1.5rem;
-    display:inline-block;
-    width: 23rem;
-    padding:5px 6px 8px 6px;
-    border-radius: 6px;  
-    /* float: right; */
-    margin-right: 40px;
-    /* color:black; */
-    border: 1px solid gray;
-    background-color:#cad8da;
-    position: relative;
+border: 1px solid gray;
 }
 
-.reviewContainer:after {
-    content: "";
-    position:absolute;
-    margin-top:-6px;
-    margin-left:-5px;
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;
-    border-bottom: 12px solid #cad8da;
-    transform:rotate(-45deg);
-    right: -15px; 
-    top: 10px;
-  }
 
+
+  .reviewSectionWrapper{
+    border: 1px solid gray;
+    margin-top: 2rem;
+    display: flex;
+  }
   .writereviewsection{
-      margin-left: 1rem;
-      width: 40rem !important;
-      margin-top: 3rem;
+    /* box-shadow: 0px 0px 9px 6px rgb(177, 177, 175); */
+    background: linear-gradient(to right, #e0eafc, #cfdef3); 
+    padding:2rem;
+    width: 38rem !important;
   }
