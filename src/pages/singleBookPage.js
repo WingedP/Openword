@@ -110,7 +110,8 @@ const handleReviewChange=(e)=>{
 
 
 if(singleBookData===null && singleBookData.data===null) return<div>Loading</div>;
-console.log(singleBookData)
+// console.log(singleBookData)
+console.log("getReviewInput", getReviewInput)
   return (
     <div className="bookdata">
       <Container fluid className="containerBookdata">
@@ -229,7 +230,7 @@ console.log(singleBookData)
     </Form.Group>
       <Form.Group controlId="exampleForm.ControlTextarea1">
     <Form.Label>Write review:
-    <span className="titlelabelinfo">    The text portion of your review.</span>
+    <span className="titlelabelinfo">The text portion of your review.</span>
     </Form.Label>
 
     <Form.Control name="content" as="textarea" rows="2" />
