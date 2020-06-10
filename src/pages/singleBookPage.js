@@ -10,7 +10,7 @@ export default function SingleBookPage(props) {
     let [getReviewInput, setGetReviewInput] = useState({});
     let [showReviews, setShowReviews] = useState([]);
     let [showBorrowModal,setShowBorrowModal] = useState(false);
-    let [rating,setRating]=useState(1);
+    let [rating,setRating]=useState(null);
     let [hoverRating,setHoverRating]=useState(null);
 
     let { id } = useParams(); 
