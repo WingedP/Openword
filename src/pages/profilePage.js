@@ -187,11 +187,9 @@ You sure you want to remove this book from your collection?
       </Modal>
       <Container fluid className="userSection">
 
-
-        <div className="profilePageControl">
-          <img className="profileIcon" src="/images/1.png"></img>
-
-        </div>
+<div className="profilePageControl">
+<img className="profileIcon" src="/images/1.png"></img>
+ </div>
 
 
 
@@ -367,18 +365,6 @@ You sure you want to remove this book from your collection?
 
 
 
-
-
-
-
-
-
-{/* <div className="profileAboutMe">
-<i style={{ fontSize: "2.2rem", color: "black", float: "right", paddingRight: "5px", paddingTop: "5px" }} class="fas fa-user-edit"></i>
-<div className="profileAboutMe1" style={{ marginTop: "4rem"}}>About: {(props.user && props.user.about)}</div>
-<div style={{ marginTop: "0rem" }}>Gender: {(props.user && props.user.gender)}</div>
-<div style={{ marginTop: "0rem" , overflow: "hidden" }}>Email: {(props.user && props.user.email)}</div>
-</div> */}
 
 
 
