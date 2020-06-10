@@ -29,7 +29,7 @@ const getUserCarts = async (e) => {
       setUserCart(body.data)    
       // alert("successfully get user History!")  
 } 
-    else (alert("error in getUserCarts."))  
+    else (console.log("error in getUserCarts."))  
   };
 const getLenderCarts = async (e) => {
     const res = await fetch(process.env.REACT_APP_SERVER + "/users/me/lender/history", {
@@ -43,7 +43,7 @@ const getLenderCarts = async (e) => {
       setLenderCart(body.data)    
       // alert("successfully get user History!")  
 } 
-    else (alert("error in getLenderCarts."))  
+    else (console.log("error in getLenderCarts."))  
   };
 
 const updateStatus = async (id) => {
