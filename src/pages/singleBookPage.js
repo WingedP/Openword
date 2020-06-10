@@ -94,7 +94,8 @@ let renderGetReviews = showReviews.length === 0
   
   </div>)}
 
-const postReview = async () =>{
+const postReview = async (e) =>{
+  e.preventDefault();
   console.log("getReviewInput", getReviewInput)
         const res = await fetch (process.env.REACT_APP_SERVER + `/books/${id}/reviews`, {
           method: "POST",
