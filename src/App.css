@@ -503,7 +503,7 @@ height: 7rem;
 
 .categoriesexplore{
     position: relative;
-    margin-left: 3.3rem !important;
+    margin-left: 5.3rem !important;
     width: 36rem;
     border: 1px solid black;
 
@@ -519,6 +519,7 @@ height: 7rem;
 .reviewz{
     /* border: 2px solid black; */
     width: 30rem;
+    margin-left: 2rem;
 }
 .reviewzcontent{
         /* border: 2px solid black; */
