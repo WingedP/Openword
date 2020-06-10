@@ -167,11 +167,11 @@ let renderUserCollection = myCollection.length === 0 ?
     }
   };
 
-  if (myCollection.length <= 0) { return(
-        <Spinner name="cube-grid" />
-  )
+  // if (myCollection.length <= 0) { return(
+  //       <Spinner name="cube-grid" />
+  // )
 
-  };
+  // };
   console.log("uploadBook", uploadBook)
   return (
     <Container fluid className="profilepage">
