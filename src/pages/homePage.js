@@ -183,7 +183,7 @@ Sign up</Button></Link>
         <i class="far fa-star"></i>
         <i class="far fa-star"></i>
         <i class="far fa-star"></i></div>
- <div>Written by <span className="reviewer">Sehuilia</span></div>
+ <div>Written by <span style={{marginLeft:"0.4rem"}} className="reviewer">Sehuilia</span></div>
 
 </div>
 <div>8 hours ago</div>
@@ -197,14 +197,13 @@ Forget it . . . <i style={{fontSize:"20px"}} class="fas fa-angle-double-right"><
 
 </div>
 
-
-
 <div className="categoriesexplore">
 <img  className="categoriesexploreflourish" src="/images/flourishes/1.png"></img>
 <div className="ftreview"><i class="fab fa-pied-piper-hat"></i> Explore by genres:  </div> 
 <Categorycard/> 
 
 </div>
+
 </Row>
 </Container>
 
