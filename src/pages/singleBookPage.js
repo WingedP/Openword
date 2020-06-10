@@ -95,6 +95,7 @@ let renderGetReviews = showReviews.length === 0
   </div>)}
 
 const postReview = async () =>{
+  console.log("getReviewInput", getReviewInput)
         const res = await fetch (process.env.REACT_APP_SERVER + `/books/${id}/reviews`, {
           method: "POST",
           headers: {
@@ -117,7 +118,6 @@ const handleReviewChange=(e)=>{
 
 if(singleBookData===null && singleBookData.data===null) return<div>Loading</div>;
 // console.log(singleBookData)
-console.log("getReviewInput", getReviewInput)
   return (
     <div className="bookdata">
       <Container fluid className="containerBookdata">
