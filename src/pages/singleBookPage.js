@@ -10,7 +10,7 @@ export default function SingleBookPage(props) {
     let [getReviewInput, setGetReviewInput] = useState({});
     let [showReviews, setShowReviews] = useState([]);
     let [showBorrowModal,setShowBorrowModal] = useState(false);
-    let [rating,setRating]=useState(null);
+    let [rating,setRating]=useState(1);
     let [hoverRating,setHoverRating]=useState(null);
 
     let { id } = useParams(); 
@@ -21,24 +21,7 @@ export default function SingleBookPage(props) {
     }, []);
 
 
-const StarRating = ()=>{
-  console.log("rating", rating)
-  return(
-  <div>   {[...Array(5)].map((star, i)=>{let ratingValue = i +1;
-      return(<label>
-  <input type="radio" name="rating" value={ratingValue}
-  onClick={()=>{setRating(ratingValue)}}
-  className="starRatingRadio"></input>
-  <i class={ ratingValue<=(hoverRating || rating) ? "yellowColor star fas fa-star" : "normalColor star fas fa-star"}
-  onMouseEnter={()=>setHoverRating(ratingValue)}
-  onMouseLeave={()=>setHoverRating(null)}
-  >
 
-   </i>
-</label>) 
-})}
-
-</div>)}
 
 
 
@@ -91,6 +74,26 @@ let renderGetReviews = showReviews.length === 0
   })
 
 
+
+  const StarRating = ()=>{
+    console.log("rating", rating)
+    return(
+    <div>   {[...Array(5)].map((star, i)=>{let ratingValue = i + 1;
+        return(<label>
+    <input type="radio" name="rating" value={ratingValue}
+    onClick={()=>{setRating(ratingValue)}}
+    className="starRatingRadio"></input>
+    <i class={ ratingValue<=(hoverRating || rating) ? "yellowColor star fas fa-star" : "normalColor star fas fa-star"}
+    onMouseEnter={()=>setHoverRating(ratingValue)}
+    onMouseLeave={()=>setHoverRating(null)}
+    >
+  
+     </i>
+  </label>) 
+  })}
+  
+  </div>)}
+
 const postReview = async () =>{
         const res = await fetch (process.env.REACT_APP_SERVER + `/books/${id}/reviews`, {
           method: "POST",
@@ -107,6 +110,9 @@ const postReview = async () =>{
 const handleReviewChange=(e)=>{
   setGetReviewInput({...getReviewInput, [e.target.name] : e.target.value })      
 }
+
+
+
 
 
 if(singleBookData===null && singleBookData.data===null) return<div>Loading</div>;
