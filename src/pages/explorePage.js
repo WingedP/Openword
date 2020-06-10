@@ -4,6 +4,7 @@ import {Link, useHistory} from 'react-router-dom';
 import Moment from 'react-moment';
 import Testnav from '../components/testnav';
 import '../pages/pagestyle/explorePage.css';
+var Spinner = require('react-spinkit');
 
 export default function ExplorePage(props) {
 let history = useHistory();
@@ -49,12 +50,16 @@ let renderExploreAllBooks = showBooks.length === 0 ? <div>No Book.</div>
       )
     })
 
-  if(showBooks.length<=0) return (<div>nothing here</div>)
+  if(showBooks.length<=0) return (<div><Spinner name="ball-spin-fade-loader" />
+  </div>)
   return (  
         <div>
  <Testnav user={props.user} setUser={props.setUser}/>
  Explore page here.
 <Container fluid className="renderExploreAllBooksContainer">
+<Row className="renderExploreAllBooksRow2"><span>Explore</span>
+<span className="moreMark">More</span></Row>
+
 <Row className="renderExploreAllBooksRow" xs={2} sm={3} md={6} lg={12}>
 {renderExploreAllBooks}</Row>
 </Container>

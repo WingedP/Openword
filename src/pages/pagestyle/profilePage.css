@@ -6,6 +6,7 @@
 .profilepage{
     /* border: 3px solid black; */
     padding: 0;
+
 }
 
 .userSection{
@@ -51,27 +52,46 @@ height: 6rem;
 }
 
 
+.form-control{
+    background-color: rgb(233, 230, 233);
+
+};
 .useAboutSection{
     position: relative;
     height: 10vh;
-    /* border: 1px solid black; */
+    /* border: 1px solid black;
+    background-color: red; */
 }
 .mycollectionWrapper{
     border-top: 1px solid gray;
     margin-top: 1rem;
-    padding-top: 5px;
+    padding-top: 10px;
         width: 70%;
 
 }
+.editaboutIcon{
+    position: absolute;
+    color: rgb(153, 151, 151);
+    left: -1.8rem;
+    top: 26px;
+    font-size: 1.3rem;
+}
 .aboutMe{
     /* border: 1px solid black; */
-    padding-left: 12rem;
-    padding-right: 12rem;
+    width: 70vw;
     padding-top: 1rem;
-color: rgb(83, 83, 83);
+    color: rgb(83, 83, 83);
     font-family: 'Slabo 27px', serif;
-
+    position: relative;
 }
+
+@media only screen and (max-width: 400px) {
+.aboutMe{
+display: flex;
+padding-top: 1rem;
+color: rgb(83, 83, 83);
+font-family: 'Slabo 27px', serif;
+}}
 .featherpenIcon{
     position: absolute;
     left: 9.9rem;
@@ -89,30 +109,43 @@ color: rgb(83, 83, 83);
      border: 1.1px solid black;
     border-radius: 5px;   
 }
-.profileOpenwordIcon{
+.profileUserName1{
+    position: relative;
+    margin-left: 3.2rem;
+}
+.profileOpenwordIcon{    
+position: absolute;
+left: -3rem;
+top: -0.5rem;
     width: 4rem;
 }
 
 .userCreatedAt{
     position: absolute;
-    bottom: 0rem;
+    width: 20vw;
+    bottom: 0.3rem;
     font-family: 'Slabo 27px', serif;
     /* border: 1px solid black; */
     font-size: 0.9rem;
     font-style: normal !important;
     color: gray;
-    margin-left: 4rem;
+    margin-left: 3.3rem;
 }
+
 .profileAboutMe{
+    /* border-top: 1px solid gray; */
 position: absolute;
-bottom: -11rem;
+bottom: -11.5rem;
 left:1rem;
 height: fit-content;
 width: 12.3vw;
 /* box-shadow: 9px 10px 5px -2px rgba(0,0,0,0.75); */
 background-image: linear-gradient(45deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%);
 }
-
+.profileAboutMe1{
+    padding-top: 8px;
+    border-top: 1px solid gray;
+}
 
 .userProfile{
     /* border: 1px solid black; */
@@ -153,13 +186,14 @@ background-image: linear-gradient(45deg, rgb(255, 255, 255) 0%, rgb(255, 255, 25
     font-family: 'Noto Serif', serif;
         font-size: 1.8rem;
         padding-left: 5rem;
-        padding-bottom: 5px;
+        padding-bottom: 22px;
         position: relative;
 
 }
 
 .renderUserCollectionRow{
     /* border: 1px solid black; */
+    margin-top: 3rem;   
     padding-top: 1.3rem;
     padding-left: 5.5rem;
     padding-bottom: 3rem;
@@ -309,6 +343,7 @@ font-size: 18px;
     /* border: 1px solid black; */
     display: flex;
 }
+
 
 
 

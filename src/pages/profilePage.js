@@ -6,6 +6,7 @@ import { Link, useHistory } from 'react-router-dom';
 import '../pages/pagestyle/profilePage.css';
 import Select from 'react-select';
 import Moment from 'react-moment';
+var Spinner = require('react-spinkit');
 
 
 export default function (props) {
@@ -14,7 +15,6 @@ export default function (props) {
   const categoryArray = props.cat;
   let [myCollection, setMyCollection] = useState([]);
   let [deletedId, setDeletedId] = useState(null);
-  // console.log("userCollection profilepage: ",userCollection)
   const [show, setShow] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [uploadPic, setUploadPic] = useState("")
@@ -23,16 +23,13 @@ export default function (props) {
   const options = categoryArray.map(el => {
     return { value: el._id, label: el.category }
   })
-  // console.log("options: ",options)
 
   useEffect(() => {
     getUsersBook()
   }, []);
 
-
-  const changeCardView =()=>{viewChange==false ? setViewChange(true) : setViewChange(false) }
-
-  const getUsersBook = async () => {
+const changeCardView =()=>{viewChange==false ? setViewChange(true) : setViewChange(false) }
+const getUsersBook = async () => {
     const res = await fetch(process.env.REACT_APP_SERVER + `/books/mybook`, {
       method: "GET",
       headers: {
@@ -46,8 +43,6 @@ export default function (props) {
     }
     else (alert("cannot upload user book collection"))
   }
-
-
 const deleteUsersBook = async (id) => {
     const res = await fetch(process.env.REACT_APP_SERVER + `/books/${id}`, {
       method: "DELETE",
@@ -63,12 +58,11 @@ const deleteUsersBook = async (id) => {
     else (alert("cannot delete user book"))
   }
 
-
-  let renderUserCollection = myCollection.length === 0 ?
+  
+let renderUserCollection = myCollection.length === 0 ?
     <div>You don't have any book yet, upload some!</div>
     : myCollection.map(el => {
       return (
-
         <Card 
         // className="cardhere"
         className={viewChange==false ?"cardhere" : "cardhereViewChange"} 
@@ -78,14 +72,9 @@ const deleteUsersBook = async (id) => {
             className={viewChange == false ? "cardImg": "cardImgChangeView" }  
             variant="top" src={el.thumbnail} />
               <Card.ImgOverlay>
-            <button  id="deletebookbtn" className="deletebookbtn" 
-   
-            onClick={() => {
+            <button  id="deletebookbtn" className="deletebookbtn"  onClick={() => {
               setDeletedId(el.id)
-              setShowDeleteModal(true)}}
-            
-            
-            >
+              setShowDeleteModal(true)}}>
               <i style={{ fontSize: "2rem" }} class=" deleteIcon far fa-times-circle"></i></button>
            </Card.ImgOverlay>
           <Card.Body 
@@ -103,23 +92,10 @@ const deleteUsersBook = async (id) => {
  >{el.ratingAverage}</div>
           </Card.Body>
 
-          {/* <button onClick={()=>{deleteUsersBook(el.id)}}
-// onClick={() => setShowDeleteModal(true)}
->  
-<i style={{fontSize:"2rem"}} class="far fa-times-circle"></i>
-</button> */}
+</Card>)
+})
 
 
-</Card>
-
-
-
-
-
-
-
-      )
-    })
   const handleSelectedChange = (value) => {
     setSelectedOption(value)
     console.log(`Option selected:`, selectedOption);
@@ -170,7 +146,6 @@ const deleteUsersBook = async (id) => {
       else { console.log("cannot upload because of", data.message) }
     } else { alert("cannot upload") }
   }
-
   const handleLogout = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -190,7 +165,11 @@ const deleteUsersBook = async (id) => {
     }
   };
 
-  if (myCollection.length <= 0) { console.log("user has no book") };
+  if (myCollection.length <= 0) { return(
+        <Spinner name="cube-grid" />
+  )
+
+  };
   console.log("uploadBook", uploadBook)
   return (
     <Container fluid className="profilepage">
@@ -215,86 +194,71 @@ You sure you want to remove this book from your collection?
         </div>
 
 
-        <div className="profileAboutMe">
-          <i style={{ fontSize: "2.2rem", color: "black", float: "right", paddingRight: "5px", paddingTop: "5px" }} class="fas fa-user-edit"></i>
-          <div style={{ marginTop: "4rem", backgroundColor: "gray" }}>About: {(props.user && props.user.about)}</div>
-          <div style={{ marginTop: "0rem", backgroundColor: "gray" }}>Gender: {(props.user && props.user.gender)}</div>
-          <div style={{ marginTop: "0rem", backgroundColor: "gray", overflow: "hidden" }}>Email: {(props.user && props.user.email)}</div>
-
-          {/* {(props.user && props.user.name || " guest")} */}
-          {/* <i class="fas fa-pen-nib"></i> */}
-        </div>
 
 
-        <div className="userProfile">
+<div className="userProfile">
 
-  <div className="profileUserName">  
-<div><img className="profileOpenwordIcon" src="/images/openword.png"></img> 
+<div className="profileUserName">  
+
+<div className="profileUserName1">
+<img className="profileOpenwordIcon" src="/images/openword.png"></img> 
  {(props.user && props.user.name  || " guest")}</div>
- <div className="userCreatedAt">Joined  Openword since <Moment format="MMM YYYY"  date={props.createAt} withTitle/></div>
-
+ <div className="userCreatedAt">Joined Openword since <Moment format="MMM YYYY"  date={props.createAt} withTitle/></div>
 
 </div>
-          <div className="userProfileMenu">
-            <Form style={{ position: "relative" }} inline>
+
+<div className="userProfileMenu">
+
+<Form className="profileSearchForm" style={{ position: "relative" }} inline>
               <FormControl className="profileFormControl" type="text" placeholder="    Search your collection" className="mr-sm-2" />
               <Button style={{ position: "absolute", }} variant=""><i class="fas fa-search"></i></Button>
             </Form>
-            <button className="userProfileLogout" onClick={handleLogout}>Logout
+ <button className="userProfileLogout" onClick={handleLogout}>Logout
        <i style={{ fontSize: "2rem" }} class="fas fa-door-open"></i>
             </button>
   <Link to='/' style={{ marginLeft: "1rem", textDecoration: 'none', color: "black" }}><i style={{ fontSize: "2rem" }} class="fas fa-home"></i></Link>
   <Link to='/users/me/history' style={{ marginLeft: "1rem", textDecoration: 'none', color: "black" }}>
    <i style={{fontSize:"2rem"}} class="fas fa-envelope-open-text"></i> </Link>
-
-
-
-          </div>
+ </div>
 
         </div>
 
-        <div className="userAvatar" >
-          <img className="userAvatarImage" src="/images/avatar/1.jpg"></img>
+        <div className="userAvatar" ><img className="userAvatarImage" src="/images/avatar/1.jpg"></img> </div>
 
+</Container>
 
-        </div>
-
-      </Container>
-      <Container fluid className="useAboutSection"> 
-                <img className="featherpenIcon" src="/images/featherpen.png"></img>
-                <div className="aboutMe">{(props.user && props.user.about)}
-           Book reviews are sorted by star, and sorted by length of review within each star level, under the assumption that longer reviews are of more interest to readers, however, each column is toggleable and so one can sort by arbitrary combinations of date/title/author/review/rating/etc.  
-     </div>
+<Container fluid className="useAboutSection"> 
+ {/* <img className="featherpenIcon" src="/images/featherpen.png"></img> */}
+  <Container className="aboutMe">
+  <i class=" editaboutIcon fas fa-pencil-alt"></i>
+    {(props.user && props.user.about)}
+  Book reviews are sorted by star, and sorted by length of review within each star level, under the assumption that longer reviews are of more interest to readers, however, each column is toggleable and so one can sort by arbitrary combinations of date/title/author/review/rating/etc.  
+     </Container>
         </Container>
-      <Container className="mycollectionWrapper">
+
+<Container className="mycollectionWrapper">
         <div className="mycollection">
-          <div> <i style={{ fontSize: "2rem" }} class="fas fa-box-open"></i>  Your collection: </div>
+          <div><i style={{ fontSize: "2rem" }} class="fas fa-box-open"></i>  Your collection: </div>
           <div><i style={{ fontSize: "2rem" }} class="fas fa-book"></i> Books owned: </div>
 
           <div><i style={{ fontSize: "2rem" }} class="fas fa-address-book"></i> Books borrowed: </div>
-          <div onClick={()=>{changeCardView();
-          console.log("viewChange", viewChange)
-        }}><i style={{ fontSize: "2rem" }} class="fas fa-th-list"></i>  </div>
-
-          
+          <div onClick={()=>{changeCardView();   // console.log("viewChange", viewChange)
+        }}>
+{viewChange==false? <i style={{ fontSize: "2rem" }} class="fab fa-slack-hash"></i> : <i style={{ fontSize: "2rem" }} class="fab fa-slack"></i>  }
+          </div>
+   
           <button className="userProfileAddBook" onClick={() => setShow(true)}> Add book
             <i style={{ marginLeft: "0.5rem", fontSize: "2rem" }} class="fas fa-folder-plus"></i> </button>
         </div>
       </Container>
 
-      <Container  className="renderUserCollection">
-        <Row className="renderUserCollectionRow"
-         xs={2} sm={3} md={6} lg={12}
-         >
+<Container  className="renderUserCollection">
+        <Row className="renderUserCollectionRow" xs={2} sm={3} md={6} lg={12}>
           {renderUserCollection}
         </Row>
-      </Container>
+</Container>
 
-
-
-
-
-      <Modal
+<Modal
         show={show}
         onHide={() => setShow(false)}
         dialogClassName="modal-90w"
@@ -409,9 +373,12 @@ You sure you want to remove this book from your collection?
 
 
 
-
-
-
+{/* <div className="profileAboutMe">
+<i style={{ fontSize: "2.2rem", color: "black", float: "right", paddingRight: "5px", paddingTop: "5px" }} class="fas fa-user-edit"></i>
+<div className="profileAboutMe1" style={{ marginTop: "4rem"}}>About: {(props.user && props.user.about)}</div>
+<div style={{ marginTop: "0rem" }}>Gender: {(props.user && props.user.gender)}</div>
+<div style={{ marginTop: "0rem" , overflow: "hidden" }}>Email: {(props.user && props.user.email)}</div>
+</div> */}
 
 
 

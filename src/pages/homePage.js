@@ -45,7 +45,7 @@ return (
 <Container fluid className="homepagezlinks" >
         <Row  className="homepagezlinksrow" lg={12} md={6} sm={6}>       
         <Col className="colhome" xs={6}><button className="linkhomepagez">Review</button></Col>   
-        <Col className="colhome"  xs={6}>        <button className="linkhomepagez">Giveaways</button></Col>   
+        <Col className="colhome"  xs={6}><button className="linkhomepagez">Giveaways</button></Col>   
         {/* <Col className="colhome"  xs={6}><button className="linkhomepagez">Browse</button></Col>    */}
         <Col className="colhome"  xs={6}>        <button className="linkhomepagez">Explore</button></Col>   
  </Row> 
@@ -80,6 +80,8 @@ About us</Button>
 
 
 <Container className="containertestttt">
+
+
 <Row>
  <Col><img className="treetest" src="/images/tree.png"></img></Col>
 

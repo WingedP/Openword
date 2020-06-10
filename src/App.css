@@ -11,6 +11,7 @@
 
 
 .App{
+    /* background: linear-gradient(to right, #f7f7f8, #f9f9fa); */
 }
 
 .navbarAbcontrol{
@@ -115,11 +116,15 @@
     margin: 0;
 }
 
+.moreMark{
+    margin-left: 80vw;
+}
 .homepagez{
     overflow: hidden;
     width: 100% !important;
     position: relative;
-	/* border: 1px solid rgb(28, 179, 133); */
+    /* border: 1px solid rgb(28, 179, 133); */
+    
     background-color: rgb(255, 255, 255);
 }
 .homepagecolz{
@@ -176,16 +181,39 @@ font-size: 12rem;
 -webkit-text-fill-color: transparent;
 }
 
+.logodesign{
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    position: relative;
+    border: 1px solid black;
+}
+.logodesign1{
+    left: 10rem;
+    background-color: white;
+bottom: 20px;           
+    border: 1px solid orange;
+    position: absolute;
+}
+.logodesign2{
+    height: 15rem;
+    width: 5rem;
+    z-index: 10;
+position: absolute;
+border: 3px solid black;
+width: fit-content;
+}
+
+
 .openwordshadow{
     position: absolute;
     width: 25rem;
     height: 4rem;
     bottom: 65%;
     left: 2.3rem;
-        /* box-shadow: -1px 10px 43px -4px rgba(245, 160, 139, 0.596); */
-        box-shadow: -1px 20px 43px -4px rgba(245, 160, 139, 0.596);
-
+    /* box-shadow: -1px 10px 43px -4px rgba(245, 160, 139, 0.596); */
+    box-shadow: -1px 20px 43px -4px rgba(245, 160, 139, 0.596);
 }
+
 .bannerintrotitle{
     /* box-shadow: -1px 10px 43px -4px rgba(232,201,0,1); */
     /* box-shadow: 0 4px 21px -2px gray; */
@@ -447,7 +475,14 @@ font-size: 18px;
     width: 100%;
 }
 
-
+@media only screen and (max-width: 400px) {
+    .containerbred {
+        height: 80vh;
+    }
+    .testcontentzIcon{
+        bottom: 6rem;
+     }
+ }
 
 
 
@@ -512,7 +547,10 @@ font-family: 'Roboto Slab', serif;
 
 .ftreview{
     position: relative;
-    font-size: 38px;
+
+
+    font-size: 34px;
+    font-weight: bold;
     font-family: 'Old Standard TT', serif;
     margin-bottom: 2rem;
 }
@@ -725,8 +763,8 @@ width: 130vw;
 
 
 .fromusertouser{
-    font-size: 18px;
-    color: rgb(49, 49, 49);
+    font-size: 15px;
+    color: rgb(143, 141, 141);
 }
 .endingz{
     position: relative;

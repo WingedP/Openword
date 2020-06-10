@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
 
 .exploreCard{
@@ -48,16 +49,34 @@ opacity: 1;}
     opacity: 0;
     ;}
 
+
+
 .exploreCardBody{
     text-align: center;
 }
 .renderExploreAllBooksContainer{
-    background-color: gainsboro;
+    /* background: linear-gradient(to right, #f7f7f8, #f9f9fa); */
+    background: linear-gradient(to right, #f0eef5, #e9e4f0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    /* background-color: gainsboro; */
 }
 .renderExploreAllBooksRow{
     padding-left: 3rem;
+    padding-top: 2rem;
+    /* border: 1px solid black; */
+
+}
+
+.renderExploreAllBooksRow2{
+    font-family: 'Lora', serif;
+    border-bottom: 1px solid rgb(190, 189, 189);
     padding-top: 3rem;
+    padding-bottom: 1rem;
+
     margin-top: 7.5vh;
+    margin-left: 2rem;
+    margin-right: 4rem;
+
     /* border: 1px solid black; */
 
 }

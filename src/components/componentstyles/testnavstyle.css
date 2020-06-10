@@ -17,28 +17,6 @@
       }
   }
 
-/* .navicontainer{
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  -webkit-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-  background: linear-gradient(to left, #4ca1af, #c4e0e5); 
-  opacity: 0;
-} */
-
-/* .navicontainersrhinked{
-  position: absolute;
-z-index: 0;
-top: 0;
-  -webkit-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-  background: linear-gradient(to left, #4ca1af, #c4e0e5); 
-} */
 
 .dropdown-toggle::after{
   display: none !important;
@@ -56,7 +34,7 @@ top: 0;
 }
 
 .testnavLogo{
-  margin-left: 10rem;
+  margin-left: 11rem;
   position: relative;
 }
 .testnavheaderlogo{
@@ -81,7 +59,7 @@ top: 0;
 .navbaropenwordIcon{
   position: absolute;
   width: 4.4rem;
-right: -3.4rem;
+left: -3.5rem;
 top: -0.8rem;
 
 }

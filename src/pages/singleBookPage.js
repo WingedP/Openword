@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {Link, useParams, useHistory } from "react-router-dom";
 import { Form, Button, Container, Modal, Row, Col, Card, Badge } from 'react-bootstrap';
 import '../pages/pagestyle/singleBookPage.css';
+import Moment from 'react-moment';
 
 export default function SingleBookPage(props) {
     let history = useHistory();
@@ -40,6 +41,7 @@ const StarRating = ()=>{
 </div>)}
 
 
+
 const getSingleBook = async () => {
         const res = await fetch (process.env.REACT_APP_SERVER + `/users/books/${id}`, {
           method: "GET",
@@ -74,17 +76,22 @@ let renderGetReviews = showReviews.length === 0
 ? <div className="noReviewBox">There's no review here.</div>  
 : showReviews.map(el=>{
   return(
-<Container className="reviewContainer">
-  <div  className="reviewContainer1">  {el.title} </div>
+<Container fluid className="reviewContainer">
+  <div  className="reviewContainer1">  
+ <div> <span style={{fontWeight:"bold"}}>"{el.title}"</span> 
+ <span>by {el.user.name}</span> <span style={{fontSize:"13px", color:"gray"}}>on <Moment format="MMM YYYY"  date={el.createAt} withTitle/></span>
+   </div> 
+  <div style={{marginRight:"0.5rem"}}>{el.rating}<i class="far fa-star"></i></div>
+
+</div>
   <div>  {el.content} </div>
-  <div>  {el.rating} </div>
-<div>by User: {el.user.name}</div>
+
 </Container>
   )
   })
 
 
-  const postReview = async () =>{
+const postReview = async () =>{
         const res = await fetch (process.env.REACT_APP_SERVER + `/books/${id}/reviews`, {
           method: "POST",
           headers: {
@@ -96,10 +103,7 @@ let renderGetReviews = showReviews.length === 0
         if(res.status===201){const body = await res.json();
         } 
         else (alert("cannot upload review's data"))
-      }
-      
-
-
+}
 const handleReviewChange=(e)=>{
   setGetReviewInput({...getReviewInput, [e.target.name] : e.target.value })      
 }
@@ -109,11 +113,17 @@ if(singleBookData===null && singleBookData.data===null) return<div>Loading</div>
 console.log(singleBookData)
   return (
     <div className="bookdata">
-
       <Container fluid className="containerBookdata">
 
-<Row className="booktitle" > 
+<Row  className="breadCrumbRow">
+  <Link className="bcItem" to='/'>Home</Link> / 
+  <Link className="bcItem" to='/explore'>Explore</Link> / 
+  <Link className="bcItem" to='/users/me'>Your collection</Link> / 
+  <Link className="bcItem">{singleBookData.title}</Link> 
+ 
+  </Row>
 
+<Row className="booktitle" > 
 <img  className="singleBookIcon" src="/images/6.png"></img>    
 <span className="singleBookDatatitle">
   <div className="booktitleDecor"></div>
@@ -147,8 +157,11 @@ console.log(singleBookData)
 
   <div className="line">
   <i style={{color:"gray", fontSize:"1.9rem", marginRight:"7px"}} class="markIcon fas fa-caret-right"></i>    
-<span className="line1">Owned by: </span>{singleBookData.owner && singleBookData.owner.name}
-<span>          <img className="singleBookPageuserAvatarImage" src="/images/avatar/1.jpg"></img>
+<span className="line1">Owned by:</span>
+
+
+<span> {singleBookData.owner && singleBookData.owner.name}
+<img className="singleBookPageuserAvatarImage" src="/images/avatar/1.jpg"></img>
 </span>
 </div>  
 
@@ -158,14 +171,27 @@ console.log(singleBookData)
 
     <div className="line">
   <i style={{color:"gray", fontSize:"1.9rem", marginRight:"7px"}} class="markIcon fas fa-caret-right"></i>    
-<span className="line1">until: </span>{singleBookData.until}</div>  
+<span className="line1">until: </span><Moment format="DD/MMM/YYYY"  date={singleBookData.until} withTitle/></div>  
+
+
+
+<div className="descriptionline">  
+<div className="descriptionline1">
+ <i style={{color:"gray", fontSize:"1.9rem", marginRight:"7px"}} class="markIcon fas fa-caret-right"></i>    
+ 
+  Description: </div>
+
+
+
+<div className="singleBookDescription">{singleBookData.description}</div>
+</div>  
 
 <div className="line">
-  <i style={{color:"gray", fontSize:"1.9rem", marginRight:"7px"}} class="markIcon fas fa-caret-right"></i>    
-<span className="line1">Description: </span>{singleBookData.description}</div>  
-
-
-    <div className="line">Borrowing price: <span className="pricebox" > <span className="pricebox2" >{singleBookData.price}</span>   VND  </span></div>           
+<i style={{color:"gray", fontSize:"1.9rem", marginRight:"7px"}} class="markIcon fas fa-caret-right"></i>    
+ 
+  <span className="line1">  Borrowing price: </span>
+  <span className="pricebox" > 
+    <span className="pricebox2">{singleBookData.price}</span > <span className="pricebox3">VNĐ</span>     </span></div>           
     
     
     <button onClick={()=>{setShowBorrowModal(true)}} className="borrowbtn"><div className="borrowbtn2"></div>Borrow?</button>
@@ -176,7 +202,7 @@ console.log(singleBookData)
         
          </div> 
 
-         </Row>
+</Row>
 
 
 
@@ -184,27 +210,52 @@ console.log(singleBookData)
 </Container>
 
 <Container fluid className="reviewSectionWrapper">
+  <Row>
 <div className="reviewSection">
-<div  className="reviewSection1" style={{fontSize:"1.4rem"}}>Review:</div>       
-{renderGetReviews}</div>
-      <div className="writereviewsection">
-      <Form onChange={handleReviewChange} onSubmit={postReview}>
+<div  className="reviewSection1">Reviews:</div>       
+
+{renderGetReviews}
+
+</div>
+
+<div className="reviewSection3" >
+<div  className="reviewSection1">Write your review:</div>       
+
+
+      <Form className="writereviewsection" onChange={handleReviewChange} onSubmit={postReview}>
       <Form.Group controlId="formBasicEmail">
-      <Form.Label>Title:</Form.Label>
+      <Form.Label>Title: <span className="titlelabelinfo">Required: One-line summary of your review</span></Form.Label>
       <Form.Control name="title" type="text" placeholder="Review's title" />
-      
     </Form.Group>
       <Form.Group controlId="exampleForm.ControlTextarea1">
-    <Form.Label>Write review:</Form.Label>
+    <Form.Label>Write review:
+    <span className="titlelabelinfo">    The text portion of your review.</span>
+    </Form.Label>
 
     <Form.Control name="content" as="textarea" rows="2" />
       </Form.Group>
-<StarRating/>
 
-      
-      <Button variant="primary" type="submit">Submit</Button>
+<div  className="ratingandsubmit"    >
+<div><span className="">Give rating : <StarRating/></span></div>
+<Button className="publishbtn" type="submit">
+  <div className="publishbtn2"></div>Publish
+</Button>
+</div>
+ {/* <Button variant="primary" type="submit">Submit</Button> */}
+      <Form.Text>Other users can always see your reviews on book page.</Form.Text>
+
+ <Container fluid style={{marginTop:"1rem"}}>
+<div>
+All reviews must meet the our standards of community guidlines, 
+      <Link>terms of service</Link> and <Link>community rules</Link> .
+</div>
+</Container>
+
       </Form>
-      </div>
+      </div>    
+  </Row>
+
+
 </Container>
 
 

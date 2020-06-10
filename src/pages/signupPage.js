@@ -79,7 +79,7 @@ export default function SignupPage() {
 
   
   <Form.Group className="groupemail" controlId="formBasicEmail">
-    <Form.Label className="labelemail">Username:</Form.Label>
+    <Form.Label className="labelname">Username:</Form.Label>
     <Form.Control className="loginemailinput" type="text" placeholder="" name="name" value={formInput.name}  />
   </Form.Group>
 

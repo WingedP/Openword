@@ -27,10 +27,11 @@
 
 }
 
-
+.labelname{
+    margin-right: 2.7rem;
+}
 .authgg{
     margin: 0rem 1rem 0rem 1rem ;
-
     transition: 0.3s;
     border-radius: 50%;
     width: 4rem;
