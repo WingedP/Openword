@@ -85,7 +85,10 @@ collapseOnSelect expand="lg" bg="" variant="light">
 
 
 
-      <NavDropdown.Item href="https://localhost:3000/users/me" className="itemDropdown">
+      {/* <NavDropdown.Item href="https://localhost:3000/users/me" className="itemDropdown"> */}
+      <NavDropdown.Item href="https://openword-temp.netlify.app/users/me" className="itemDropdown">
+
+        
       Profile
       <i style={{marginLeft:"4rem" }} class="fas fa-book"></i>
       <Link className="dropdownLink" to='/users/me'></Link>
@@ -94,7 +97,9 @@ collapseOnSelect expand="lg" bg="" variant="light">
 
 
 
-        <NavDropdown.Item href="https://localhost:3000/users/me/history" className="itemDropdown">
+    {/* <NavDropdown.Item href="https://localhost:3000/users/me/history" className="itemDropdown"> */}
+    <NavDropdown.Item href="https://openword-temp.netlify.app/users/me/history" className="itemDropdown">
+
         History
       <i style={{marginLeft:"3.7rem" }} class="fas fa-clipboard-list"></i>
       <Link className="dropdownLink" to='/users/me/history'></Link>
