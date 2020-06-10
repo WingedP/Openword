@@ -31,6 +31,8 @@ const getUserCarts = async (e) => {
 } 
     else (console.log("error in getUserCarts."))  
   };
+
+  
 const getLenderCarts = async (e) => {
     const res = await fetch(process.env.REACT_APP_SERVER + "/users/me/lender/history", {
       method: "GET",    

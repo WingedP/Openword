@@ -83,8 +83,8 @@ About us</Button>
 
 
 <Row>
- <Col><img className="treetest" src="/images/tree.png"></img></Col>
-
+ {/* <Col><img className="treetest" src="/images/tree.png"></img></Col> */}
+ <img className="treetest" src="/images/tree.png"></img>
 <Col lg={8} className="containerbred">
 <Row>
                 <Col className="testcontentz">
