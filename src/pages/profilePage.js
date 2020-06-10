@@ -103,9 +103,9 @@ let renderUserCollection = myCollection.length === 0 ?
   const handleChange = (e) => {
     setUploadBook({ ...uploadBook, [e.target.name]: e.target.value })
   }
-  const uploadBookData = async () => {
+  const uploadBookData = async (link) => {
     let available = true;
-    let newBook = { ...uploadBook, thumbnail: uploadPic }
+    let newBook = { ...uploadBook, thumbnail: link }
     newBook.category = selectedOption.map(el => el.value);
     if (newBook.availability == "on") { newBook.availability = available }
     const res = await fetch(process.env.REACT_APP_SERVER + `/books/addbook`, {
@@ -139,9 +139,11 @@ let renderUserCollection = myCollection.length === 0 ?
       const data = await res.json();
       console.log(data)
       if (data.success) {
+       uploadBookData(data.data.link)
+
         // console.log("hahahhahaha")
-        setUploadPic(data.data.link)
-        console.log("uploadPic", uploadPic )
+        // setUploadPic(data.data.link)
+        // console.log("uploadPic", uploadPic )
       }
       else { console.log("cannot upload because of", data.message) }
     } else { alert("cannot upload") }
@@ -265,8 +267,8 @@ You sure you want to remove this book from your collection?
         <Modal.Header closeButton><Modal.Title id="example-custom-modal-styling-title">  Say something about your book:</Modal.Title></Modal.Header>
         <Modal.Body>
           <Container className="addbookcontainer">
-            <Form onSubmit={uploadBookData} onChange={handleChange}>
-
+            <Form onSubmit={uploadFile} onChange={handleChange}>
+        
               <Form.Group controlId="formBasicEmail">
 
                 <Form.Label>Title:</Form.Label>
