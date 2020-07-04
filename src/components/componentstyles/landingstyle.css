@@ -1,0 +1,182 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Volkhov&display=swap');
+
+
+
+.landing{
+    /* background: gold; */
+    /* border: 5px solid black; */
+    position: relative;
+    min-height: 100vh;
+    /* width: 100%; */
+    margin-top: 9rem;
+    margin-bottom: 10rem;
+}
+
+/* .landing-img{
+    position: absolute;
+    top: -11rem;
+    width: 60%;
+} */
+.landing-img{
+    position: absolute;
+    top: -10rem;
+    left: 4rem;
+    width: 78%;
+}
+
+.svg-section{
+    position: absolute;
+    top: 1rem;
+    width: 100%;    
+    z-index: 1;
+}
+
+#header-shape-gradient2{
+    --color-bot2: #edcdf1;
+    --color-stop2: #edcdf1;
+    width: 100%;    
+    height: 100%;
+}
+#header-shape-gradient {
+    --color-trans: black;
+    --color-stop: #f7caca;
+    --color-bot: #edcdf1;
+    width: 100%;    
+    height: 100%;
+  }
+
+.pathy2{
+    fill: url(#header-shape-gradient2);
+
+}
+.pathy{
+    fill: url(#header-shape-gradient);
+}
+.pathy3{
+    fill: url(#header-shape-gradient);
+  
+}
+.pathy4{
+    fill: url(#header-shape-gradient2);
+
+}
+.landing-title{
+    font-family: 'Volkhov', serif;
+    position: absolute;
+    z-index: 2;
+    top:3.4rem;
+    display: flex;
+    justify-content: center;
+    /* height: 20rem; */
+    font-size: 8rem;
+    width: 100%;
+    background: transparent;
+    text-align: center;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+.landing-title-inner{
+    border: 2px solid rgb(107, 106, 106);
+    border-style: dashed;
+    border-bottom: none ;
+    border-radius: 10px;
+    padding-top: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 2rem;
+    background: rgb(255, 253, 240);
+    display: flex;
+    justify-content: center;
+}
+
+.landing-letter{
+    /* background: rgba(255,221,0,1); */
+    /* box-shadow: -1px -41px 42px 5px #e66465; */
+    /* background: linear-gradient(transparent,#e66465, #9198e5, transparent); */
+    text-shadow: 12px 12px gold;
+    /* color: transparent; */
+
+}
+.landing-letter2{
+    transform : translateY(-2rem);  
+    text-shadow: 2px 2px rgb(207, 145, 126);
+  color: rgb(68, 66, 64);
+
+}
+.landing-letter3{
+    color: rgb(99, 97, 95);
+    transform : translateY(-4rem)    ;
+    text-shadow: 2px 2px rgb(207, 145, 126);
+
+
+}
+.landing-letter4{
+    color: rgb(114, 110, 106);
+    text-shadow: 2px 2px rgb(207, 145, 126);
+    transform : translateY(-2rem) ;   
+
+}
+.landing-letter5{
+    text-shadow: 12px 12px gold;
+
+}
+.landing-letter6{
+    color: rgb(68, 66, 64);
+    text-shadow: 2px 2px rgb(207, 145, 126);
+    transform : translateY(1.7rem)    
+
+}
+.landing-letter7{
+    color: rgb(114, 110, 106);
+    text-shadow: 2px 2px rgb(207, 145, 126);
+    transform : translateY(.5rem)    
+
+}
+.landing-letter8{
+
+}
+
+.intro-wave2{
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    z-index: -1;
+
+    width: 100%;
+
+}
+.intro-wave{
+    border-radius: 20px;
+    position: absolute;
+    width: 100%;
+    bottom: -1rem;
+    left: 0;
+    z-index: -1;
+}
+.landing-intro-inner{
+text-align: center;
+text-shadow: 3px 3px rgb(235, 247, 192);
+
+    border-radius: 20px;
+    position: relative;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+    padding-top: 2rem;
+    /* overflow: hidden; */
+    /* background: blue; */
+    width: fit-content;
+    /* border-bottom: 2px solid gray; */
+    
+}
+.landing-intro{
+    /* background: red; */
+    width: 100%;
+    height: 6rem;
+    z-index: 2;
+    position: absolute;
+    bottom: 16rem;
+display: flex;
+justify-content: center;
+font-size: 2rem;
+}

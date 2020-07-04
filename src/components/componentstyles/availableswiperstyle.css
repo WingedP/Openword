@@ -1,9 +1,10 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap');
 
 .availableSwiperContainer{
     /* border: 1px solid black; */
 background-color: rgb(241, 236, 236);
-
 -webkit-box-shadow: 3px 1px 36px 37px rgba(255,227,241,1);
 -moz-box-shadow: 3px 1px 36px 37px rgba(255,227,241,1);
 box-shadow: 3px 1px 36px 17px rgb(236, 230, 233);
@@ -11,23 +12,32 @@ box-shadow: 3px 1px 36px 17px rgb(236, 230, 233);
 
 .swipercard{
     border-radius: 0;
-    margin: 2rem 1rem 2.5rem 1rem;
+    position: relative;
+    margin: 2rem -5rem 2.5rem 1rem;
     padding: 1rem 0rem 1rem 0rem;
-    width: 20rem !important;
-    height: 23rem !important;
-    display: flex;
-    align-items: center;
-    overflow-y: scroll;
-    background: #EFEFBB;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #D4D3DD, rgb(240, 240, 236));  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #D4D3DD, rgb(199, 199, 198)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    width: 15rem !important;
+    height: 20rem !important;
+    /* display: flex;
+    align-items: center; */
+    /* overflow-x: auto !important; */
+    /* overflow-y: scroll; */
+    transition: 0.5s ease !important;
+    box-shadow: -6px 8px 5px 0px rgba(0,0,0,0.75);
+
+    /* background: #EFEFBB; 
+    background: -webkit-linear-gradient(to right, #D4D3DD, rgb(240, 240, 236)); 
+    background: linear-gradient(to right, #D4D3DD, rgb(199, 199, 198));  */
 }
 
 .swipeimages{
-    width: 14rem;
-    -webkit-box-shadow: 6px 9px 5px 0px rgba(56,54,56,1);
+  margin-left: 1rem;
+  margin-top: .7rem;
+  width: 10rem;
+  border: .7px solid gray;
+    /* -webkit-box-shadow: 6px 9px 5px 0px rgba(56,54,56,1);
     -moz-box-shadow: 6px 9px 5px 0px rgba(56,54,56,1);
-    box-shadow: 6px 9px 5px 0px rgba(56,54,56,1);
+    box-shadow: 6px 9px 5px 0px rgba(56,54,56,1); */
+
 }
 
 .swipercard::-webkit-scrollbar{
@@ -45,7 +55,23 @@ box-shadow: 3px 1px 36px 17px rgb(236, 230, 233);
     width: 5px;
   }
   .swipercard:hover{
-    transition: 0.5s;}
+    background-size: 400% !important;
+    background: var( --hover-gradient);
+/* background: rgb(253, 136, 136); */
+    /* background: linear-gradient(to right, #ff416c, #ff4b2b);  */
+    transition: 0.5s ease !important;
+    transform: translateX(1rem) translateY(-2rem);
+    margin-right: 1.5rem;
+    margin-left: 1rem;
+    width: 30rem !important;
+    animation: brandname-animation 5s infinite alternate;
+
+  }
+  @keyframes brandname-animation {
+    0% {background-position: left}
+    50% {background-position: right}
+  }
+
     .swipercard > img {transform: scale(1);}
     .swipercard:hover > img {
         transform: scale(1.08);
@@ -53,3 +79,89 @@ box-shadow: 3px 1px 36px 17px rgb(236, 230, 233);
       }
         .swipercard img {transition: 0.5s;} 
     
+
+
+.fontChange{
+  font-family: 'Domine', serif;
+  text-shadow:  .5px .5px rgba(50,50,70,0.5);
+}
+
+.card-info-detail{
+color: rgb(94, 86, 86);
+padding-left: .5rem;
+}
+
+.ratingQuantity{    font-size: 13px;
+
+  text-shadow: none;
+}
+.card-info-detail2{
+  font-family: 'Crimson Text', serif;
+  font-size: 20px;
+  color: rgb(92, 93, 94);
+}
+
+
+
+.info-wrapper{
+display: flex !important; 
+align-items: center;
+}
+
+
+.card-info{
+  transition: .3s ease !important;
+  position: absolute;
+  z-index: -1;
+  left: 0rem;
+  width: 17rem;
+  height: 17rem !important;
+  background: rgba(255, 255, 255, 0.87);
+visibility: hidden;
+border: .7px solid rgba(128, 128, 128, 0.589);
+border-style: dashed;
+padding: 1rem;
+border-radius: 2px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+}
+
+.swipercard:hover .card-info{
+  transition: .3s ease;
+  visibility: visible;
+left: 12rem;
+
+}
+.availableSwiperContainer:hover .swipercard{
+  /* opacity: .7 !important; */
+filter: grayscale(50%) !important;
+}
+.availableSwiperContainer:hover .swipercard:hover{
+  opacity: 1.0 !important;
+  filter: grayscale(0%) !important;
+
+}
+
+.swipercard-bg{
+  background: rgb(255, 207, 151);
+}
+.swipercard-bg2{
+  background: rgb(197, 247, 185);
+}
+.swipercard-bg3{
+  background: pink;
+}
+.swipercard-bg4{
+  background: rgb(207, 203, 247);
+}
+.swipercard-bg5{
+  background: rgb(239, 248, 157);
+}
+.swipercard-bg6{
+  background: pink;
+}
+.swipercard-bg7{
+  background: pink;
+}

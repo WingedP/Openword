@@ -8,6 +8,8 @@ import 'swiper/css/swiper.css';
 
 export default function Availableswiper() {
   const history = useHistory();
+
+
     let [availableBook, setAvailableBook]=useState([]);
     const params = {
         slidesPerView: 3,
@@ -37,50 +39,217 @@ export default function Availableswiper() {
 
 useEffect(()=>{getAvailableBook()},[])
 if(availableBook.length <= 0)return<div>Loading</div>;
+console.log("availableBook",availableBook)
 return (       
     <Container className="availableSwiperContainer">
-        
 <Swiper {...params}>
 
-<Card className="swipercard" onClick={()=>{history.push(`./users/books/${availableBook[availableBook.length-1].id}`);}} > 
- <Card.Img className="swipeimages" variant="top" src={availableBook[availableBook.length-1].thumbnail}/>
+<Card className="swipercard swipercard-bg" onClick={()=>{history.push(`./users/books/${availableBook[availableBook.length-1].id}`);}} > 
+
+
+
+<Card.Img className="swipeimages" variant="top" src={availableBook[availableBook.length-1].thumbnail}/>
+
+
+<div className="card-info">
+
+
+<div className="info-wrapper">
+
+
+<div className="card-info-detail2">Title:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-1].title}
+</div>
+
+
+</div>
+
+
+
+<div className="info-wrapper">
+<div  className="card-info-detail2">Author:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-1].author}
+</div></div>
+
+
+<div className="info-wrapper"><div  className="card-info-detail2">Owner:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-1].owner.name}
+</div></div>
+
+<div className="info-wrapper"><div  className="card-info-detail2">Price:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-1].price}
+</div></div>
+
+
+
+<div className="info-wrapper">
+<div  className="card-info-detail2">Author:</div>
+<div className="card-info-detail fontChange">
+<span> {availableBook[availableBook.length-1].ratingAverage}<i class="far fa-star"></i> </span>   
+   <span className="ratingQuantity">{availableBook[availableBook.length-1].ratingQuantity} voters</span>
+</div></div>
+
+
+</div>
+
+
       <Card.Body className="">
-      <Card.Title>{availableBook[availableBook.length-1].title}</Card.Title>    
-<Card.Text>From user: {availableBook[availableBook.length-1].owner.name}</Card.Text>                
+      {/* <Card.Title>{availableBook[availableBook.length-1].title}</Card.Title>     */}
+{/* <Card.Text>From user: {availableBook[availableBook.length-1].owner.name}</Card.Text>                 */}
         </Card.Body>
+
+
+
  </Card>
 
- <Card className="swipercard" 
+ <Card className="swipercard swipercard-bg2" 
   onClick={()=>{history.push(`./users/books/${availableBook[availableBook.length-2].id}`);}} >
  <Card.Img className="swipeimages" variant="top" src={availableBook[availableBook.length-2].thumbnail}/>
-      <Card.Body className="">
+ <div className="card-info">
+
+
+<div className="info-wrapper">
+
+
+<div className="card-info-detail2">Title:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-2].title}
+</div>
+
+
+</div>
+
+
+
+<div className="info-wrapper">
+<div  className="card-info-detail2">Author:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-2].author}
+</div></div>
+
+
+<div className="info-wrapper"><div  className="card-info-detail2">Owner:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-2].owner.name}
+</div></div>
+
+<div className="info-wrapper"><div  className="card-info-detail2">Price:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-2].price}
+</div></div>
+
+<div className="info-wrapper">
+<div  className="card-info-detail2">Author:</div>
+<div className="card-info-detail fontChange">
+<span> {availableBook[availableBook.length-1].ratingAverage}<i class="far fa-star"></i> </span>   
+   <span className="ratingQuantity">{availableBook[availableBook.length-2].ratingQuantity} voters</span>
+</div></div>
+
+
+</div>
+      {/* <Card.Body className="">
       <Card.Title>{availableBook[availableBook.length-2].title}</Card.Title> 
       <Card.Text>From user: {availableBook[availableBook.length-2].owner.name}</Card.Text>                
                    
-        </Card.Body>
+        </Card.Body> */}
  </Card>
 
- <Card className="swipercard" 
+ <Card className="swipercard swipercard-bg3" 
   onClick={()=>{history.push(`./users/books/${availableBook[availableBook.length-3].id}`);}}>
  <Card.Img className="swipeimages" variant="top" src={availableBook[availableBook.length-3].thumbnail}/>
-      <Card.Body className="">
+ <div className="card-info">
+
+
+<div className="info-wrapper">
+
+
+<div className="card-info-detail2">Title:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-3].title}
+</div>
+
+
+</div>
+
+
+
+<div className="info-wrapper">
+<div  className="card-info-detail2">Author:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-3].author}
+</div></div>
+
+
+<div className="info-wrapper"><div  className="card-info-detail2">Owner:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-3].owner.name}
+</div></div>
+
+<div className="info-wrapper"><div  className="card-info-detail2">Price:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-3].price}
+</div></div>
+
+
+
+<div className="info-wrapper">
+<div  className="card-info-detail2">Author:</div>
+<div className="card-info-detail fontChange">
+<span> {availableBook[availableBook.length-1].ratingAverage}<i class="far fa-star"></i> </span>   
+   <span className="ratingQuantity">{availableBook[availableBook.length-3].ratingQuantity} voters</span>
+</div></div>
+
+
+</div>
+      {/* <Card.Body className="">
       <Card.Title>{availableBook[availableBook.length-3].title}</Card.Title>   
       <Card.Text>From user: {availableBook[availableBook.length-3].owner.name}</Card.Text>                
                  
-        </Card.Body>
+        </Card.Body> */}
  </Card>
 
- <Card className="swipercard" 
+ <Card className="swipercard swipercard-bg4" 
   onClick={()=>{history.push(`./users/books/${availableBook[availableBook.length-4].id}`);}}>
  <Card.Img className="swipeimages" variant="top" src={availableBook[availableBook.length-4].thumbnail}/>
-      <Card.Body className="">
+ <div className="card-info">
+
+
+<div className="info-wrapper">
+
+
+<div className="card-info-detail2">Title:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-1].title}
+</div>
+
+
+</div>
+
+
+
+<div className="info-wrapper">
+<div  className="card-info-detail2">Author:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-1].author}
+</div></div>
+
+
+<div className="info-wrapper"><div  className="card-info-detail2">Owner:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-1].owner.name}
+</div></div>
+
+<div className="info-wrapper"><div  className="card-info-detail2">Price:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-1].price}
+</div></div>
+
+
+
+<div className="info-wrapper">
+<div  className="card-info-detail2">Author:</div>
+<div className="card-info-detail fontChange">
+<span> {availableBook[availableBook.length-1].ratingAverage}<i class="far fa-star"></i> </span>   
+   <span className="ratingQuantity">{availableBook[availableBook.length-1].ratingQuantity} voters</span>
+</div></div>
+
+
+</div>
+      {/* <Card.Body className="">
       <Card.Title>{availableBook[availableBook.length-4].title}</Card.Title>
-      <Card.Text>From user: {availableBook[availableBook.length-4].owner.name}</Card.Text>                
-                    
-        </Card.Body>
+      <Card.Text>From user: {availableBook[availableBook.length-4].owner.name}</Card.Text>                           
+        </Card.Body> */}
  </Card>
 
- <Card className="swipercard" 
+ <Card className="swipercard swipercard-bg5" 
   onClick={()=>{history.push(`./users/books/${availableBook[availableBook.length-5].id}`);}}>
  <Card.Img className="swipeimages" variant="top" src={availableBook[availableBook.length-5].thumbnail}/>
       <Card.Body className="">
@@ -89,7 +258,7 @@ return (
         </Card.Body>
  </Card>
  
- <Card className="swipercard" 
+ <Card className="swipercard swipercard-bg6" 
   onClick={()=>{history.push(`./users/books/${availableBook[availableBook.length-6].id}`);}}>
  <Card.Img className="swipeimages" variant="top" src={availableBook[availableBook.length-6].thumbnail}/>
       <Card.Body className="">

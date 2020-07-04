@@ -121,7 +121,8 @@ if(singleBookData===null && singleBookData.data===null) return<div>Loading</div>
 // console.log(singleBookData)
   return (
     <div className="bookdata">
-      <Container fluid className="containerBookdata">
+
+<Container fluid className="containerBookdata">
 
 <Row  className="breadCrumbRow">
   <Link className="bcItem" to='/'>Home</Link> / 
@@ -194,13 +195,23 @@ if(singleBookData===null && singleBookData.data===null) return<div>Loading</div>
 <div className="singleBookDescription">{singleBookData.description}</div>
 </div>  
 
-<div className="line">
+<div className="line line-borrow-mobile">
 <i style={{color:"gray", fontSize:"1.9rem", marginRight:"7px"}} class="markIcon fas fa-caret-right"></i>    
  
   <span className="line1">  Borrowing price: </span>
   <span className="pricebox" > 
     <span className="pricebox2">{singleBookData.price}</span > <span className="pricebox3">VNĐ</span>     </span></div>           
-    
+
+
+<div className="borrowingline">  
+<div className="borrowingline1">
+ <i style={{color:"gray", fontSize:"1.9rem", marginRight:"7px"}} class="markIcon fas fa-caret-right"></i>    
+  Borrowing for: </div>
+
+  <span className="pricebox" > 
+    <span className="pricebox2">{singleBookData.price}</span > <span className="pricebox3">VNĐ</span>     </span>
+</div>  
+
     
     <button onClick={()=>{setShowBorrowModal(true)}} className="borrowbtn"><div className="borrowbtn2"></div>Borrow?</button>
 
@@ -218,7 +229,8 @@ if(singleBookData===null && singleBookData.data===null) return<div>Loading</div>
 </Container>
 
 <Container fluid className="reviewSectionWrapper">
-  <Row>
+
+  <Row className="reviewSectionWrapper-row">
 <div className="reviewSection">
 <div  className="reviewSection1">Reviews:</div>       
 
@@ -266,11 +278,7 @@ All reviews must meet the our standards of community guidlines,
 
 </Container>
 
-
-
-
-
-    <MyVerticallyCenteredModal
+<MyVerticallyCenteredModal
         show={showBorrowModal}
         onHide={() => setShowBorrowModal(false)}
       />

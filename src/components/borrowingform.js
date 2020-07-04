@@ -25,7 +25,7 @@ export default function Borrowingform(props) {
       const body = await res.json();
       alert("Book request successful! Waiting for user's response")
       history.push(`/users/me`);
-    } 
+}   
     else (alert("cannot send this borrow form"))
   }
 

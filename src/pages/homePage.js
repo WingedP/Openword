@@ -4,10 +4,14 @@ import Swiper from 'react-id-swiper';
 import { Link, useHistory } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import Categorycard from '../components/categorycard';
+import LandingSection from '../components/landing-section';
 import SwiperAvailableItem from '../components/availableswiper';
 import Testnav from '../components/testnav';
+import Moment from 'react-moment';
 
 export default function HomePage(props) {
+        
+const [showBooks,setShowBooks]=useState([])
 
   const params = {
     slidesPerView: 3,
@@ -27,6 +31,10 @@ export default function HomePage(props) {
       clickable: true
     }
   }
+
+useEffect(() => {exploreAllBooks()}, [])
+
+
   let showAllCategories = props.cat.map(el=>{
         return(
         <Container style={{display:"flex", flexDirection:"column"}}>
@@ -35,18 +43,54 @@ export default function HomePage(props) {
         )
   })
 
+const exploreAllBooks = async (e) => {
+        const res = await fetch(process.env.REACT_APP_SERVER + "/books?page=1&limit=6", {
+          method: "GET",    
+          headers: {
+            "Content-Type": "application/json"
+          },
+        });
+        if(res.status===200){
+          const body = await res.json();
+          setShowBooks(body.data)      
+    } 
+        else (alert("error in exploreAllBooks."))  
+    };
+
+console.log("explore all books", showBooks )
+
+
+let renderExploreAllBooks = showBooks.length === 0 ? <div>No Book.</div>
+: showBooks.map(el => {
+  return (
+  <Card className="homepageCard" key={el.id}>
+        <Card.Img   className="homepageCardImg" variant="top" src={el.thumbnail} />
+
+        {/* <Card.ImgOverlay className="exploreCardImg2">
+        <img className="exploreBookIcon2" src="/images/closedbookicon.png"></img>
+        <img className="exploreBookIcon" src="/images/openbookicon.png"></img>
+          </Card.ImgOverlay> */}
+
+
+
+        
+ </Card>
+      )
+    })
+
 
 return (        
   <div className="homepagez">
+
+
+
           {/* <Navbar user={props.user} setUser={props.setUser}/> */}
                 <Testnav user={props.user} setUser={props.setUser}/>
-            {/* <img className="bgimg" src="/images/appbg/1.png"></img> */}
 
-<Container fluid className="homepagezlinks" >
+{/* <Container fluid className="homepagezlinks" >
         <Row  className="homepagezlinksrow" lg={12} md={6} sm={6}>       
         <Col className="colhome" xs={6}><button className="linkhomepagez">Review</button></Col>   
         <Col className="colhome"  xs={6}><button className="linkhomepagez">Giveaways</button></Col>   
-        {/* <Col className="colhome"  xs={6}><button className="linkhomepagez">Browse</button></Col>    */}
         <Col className="colhome"  xs={6}>        <button className="linkhomepagez">Explore</button></Col>   
  </Row> 
   </Container>
@@ -74,8 +118,12 @@ return (
 About us</Button>
 </Container>
 
-</Container>
+</Container> */}
 
+
+
+
+<LandingSection/>
 <div className="bookseparator"><img className="bookseparatorimg" src="/images/bookseparator.png"></img></div>
 
 
@@ -209,70 +257,52 @@ Forget it . . . <i style={{fontSize:"20px"}} class="fas fa-angle-double-right"><
 
 
 
-
-
-
-
 <Container className="bookslide">
 
-<Row className="availablerow"> <div>  
-{/* <img  className="availablerowimg" src="/images/6.png"></img> */}
+{/* <Row className="availablerow"> 
+<div>AVAILABLE FOR BORROWING:  
 <img  className="availablerowflourish" src="/images/flourishes/2.png"></img>
-        AVAILABLE FOR BORROWING:  
         <div className="fromusertouser">from users to users</div>
-        </div></Row> 
-
-
-{/* <Swiper {...params}>
-        <div  className="swipeimg">
-<img className="swiperavailimg" style={{height:"18rem"}} src="/images/bookthumbnail/3.jpg"></img>
-<div className="swiperavailbookdetail">from user 
-<div>Illnov</div>
-<div>The Silmarillion by J.R.R Tolkien</div>
-<div>last updated: 8 hours ago</div>
-</div>
         </div>
+</Row>  */}
 
-        <div className="swipeimg">
-        <img className="swiperavailimg" style={{height:"18rem"}} src="/images/bookthumbnail/2.jpg"></img>
+{/* <Row className="availablerow">
+  <div className="latest-available">
+  <div className="tag-decor3"></div>
+  <div className="latest-available-inner">  LATEST AVAILABLE:
+</div>
+  </div>
+  
+ </Row> */}
+  
+<Row className="availablerow2">  
 
-        <div className="swiperavailbookdetail">from user 
-<div>Illnov</div>
-<div>The Silmarillion by J.R.R Tolkien</div>
-<div>last updated: 8 hours ago</div>
-</div>
+<div className="latest-available">
+  <div className="tag-decor3"></div>
+  <div className="latest-available-inner">LATEST AVAILABLE:</div>
+  <div className="latest-available-guide">From user to user.</div>
 
-</div>
-<div className="swipeimg"><img className="swiperavailimg" style={{height:"18rem"}} src="/images/bookthumbnail/comic4.jpg"></img>
-<div className="swiperavailbookdetail">from user 
-<div>Illnov</div>
-<div>The Silmarillion by J.R.R Tolkien</div>
-<div>last updated: 8 hours ago</div>
-</div></div>
-        <div className="swipeimg"><img className="swiperavailimg" style={{height:"18rem"}} src="/images/bookthumbnail/1.jpg"></img>
-        <div className="swiperavailbookdetail">from user 
-<div>Illnov</div>
-<div>The Silmarillion by J.R.R Tolkien</div>
-<div>last updated: 8 hours ago</div>
-</div>
-</div>
-        <div className="swipeimg"><img className="swiperavailimg" style={{height:"18rem"}} src="/images/bookthumbnail/4.jpg"></img>
-        <div className="swiperavailbookdetail">from user 
-<div>Illnov</div>
-<div>The Silmarillion by J.R.R Tolkien</div>
-<div>last updated: 8 hours ago</div>
-</div>
-</div>
-        <div className="swipeimg"><img className="swiperavailimg" style={{height:"18rem"}} src="/images/bookthumbnail/5.jpg"></img>
-        <div className="swiperavailbookdetail">from user 
-<div>Illnov</div>
-<div>The Silmarillion by J.R.R Tolkien</div>
-<div>last updated: 8 hours ago</div>
-</div>
+  </div>
+
+
+{/* <div className="latest-available-guide">From user to user.</div> */}
+
+<Row className="availablerow2-inner" >
+  <div className="latest-available-guide2">  Like it? There are more!
 </div>
 
-      </Swiper> */}
+    <Link to='/explore'><button className="viewallbtn"><div className="viewallbtn2"></div>View all.</button></Link>
 
+  </Row>
+
+
+  </Row>
+
+{/* <Row className=""> 
+<h4>Like it? There's more.  
+<Link to='/explore'><button className="viewallbtn"><div className="viewallbtn2"></div>View all.</button></Link>
+ </h4> 
+ </Row> */}
 
 
 <SwiperAvailableItem/>
@@ -281,21 +311,127 @@ Forget it . . . <i style={{fontSize:"20px"}} class="fas fa-angle-double-right"><
 </Container>
 
 
-<Row className="availablerow"> 
-<h4>Like it? There's more.  
-
-{/* <Link to='/signup'> <Button className="viewallbtn"><div className="viewallbtn1"></div>View all</Button></Link> */}
-<Link to='/explore'><button className="viewallbtn"><div className="viewallbtn2"></div>View all.</button></Link>
 
 
-         </h4> 
 
-{/* <Link to='/signup'> <Button className="signupbtn"><div className="signupbtn1"></div>Sign up</Button></Link> */}
+<div className="bookseparator">
+  <img className="bookseparatorimg" src="/images/bookseparator.png"></img>
+  </div>
 
- </Row> 
 
 
-<Container className="bookslide1"  >
+
+
+<div className="home-explore-section">
+
+<div className="home-explore-text">
+
+<div className="guide-decor"></div>
+{/* <div className="guide-decor2"></div> */}
+
+<div className="guide-decor3"></div>
+{/* <div className="guide-decor4"></div> */}
+
+<div className="guide-decor5"></div>
+{/* <div className="guide-decor6"></div> */}
+
+<div className="guide-item-1">
+<div className="todo1">
+<div className="todo-img-wrapper"><img className="closed-book" src="/images/closedbookicon.png"></img></div>
+
+<div className="todo-inner-wrapper">
+<div className="todo-inner">
+<i style={{color:"gray", fontSize:"1.9rem", marginRight:"7px"}} class="markIcon fas fa-caret-right"></i>    
+Title:</div>
+<div className="todo-inner">  <i style={{color:"gray", fontSize:"1.9rem", marginRight:"7px"}} class="markIcon fas fa-caret-right"></i>    
+Author:</div>
+<div className="todo-inner">  <i style={{color:"gray", fontSize:"1.9rem", marginRight:"7px"}} class="markIcon fas fa-caret-right"></i>    
+Borrowing price:</div>
+{/* <div className="three-dots"><i class="fas fa-ellipsis-h"></i></div> */}
+</div>
+</div>
+<div className="guide-text">Click cover to see book's detail</div>
+</div>
+
+<div  className="guide-item-2">
+<div className="guide-text">Publish reviews</div>
+
+<div className="guide-review">
+<div className="guide-review-title">"Nice!" by khoa on Jul 2020 4 <i class="far fa-star"></i>
+ </div>
+<div>Good stuff. Book's condition is good, readable. Love it. Thanks Anna.</div>
+</div>
+</div>
+
+<div  className="guide-item-3">
+
+<div className="guide-profile">
+
+<div className="guide-profile-item">You <i class="usericons fas fa-user-circle"></i></div>
+
+<div className="guide-profile-collection" style={{display:"flex", justifyContent:"space-around"}}>
+<i style={{color:"gold", textShadow:"2px 2px gray"}} class="fas fa-book"></i>
+<i style={{color:"brown", textShadow:"2px 2px gray"}} class="fas fa-book-dead"></i>
+<i style={{color:"lightgreen", textShadow:"2px 2px gray"}} class="fas fa-book-open"></i>
+</div>
+
+<div className="guide-profile-collection" style={{display:"flex", justifyContent:"space-around"}}>
+<i style={{color:"hotpink", textShadow:"2px 2px gray"}} class="fas fa-book"></i>
+<i style={{color:"paleturquoise", textShadow:"2px 2px gray"}} class="fas fa-book"></i>
+<i style={{color:"tomato", textShadow:"2px 2px gray"}} class="fas fa-book"></i>
+
+</div>
+</div>
+
+<div className="guide-text">Build your Collection & customizing your profile</div>
+
+</div>
+
+</div>
+
+
+<div class="container" className="home-renderExploreAllBooks">
+  <div className="home-explore-headings">
+<div className="home-explore-tag-popular">
+  <div className="tag-decor"></div>
+  <div  className="tag-popular-text">Popular:</div>
+  </div>
+
+<div  className="home-explore-tag-genres">
+  <div>Genres</div>
+<div>Literature</div>
+<div>History</div>
+<div>Sciences</div>
+<div>Comic</div>
+</div>
+
+
+    
+    </div>
+  <div class="row render-explore-row">
+  <div className="tag-decor2"></div>
+    {renderExploreAllBooks}
+  <div style={{paddingTop:"2rem"}}>
+  <Link to='/explore'><button className="viewallbtn"><div className="viewallbtn2"></div>Explore .</button></Link>
+
+  </div>
+  </div>
+</div>
+        
+</div>
+ 
+<div className="bookseparator">
+  <img className="bookseparatorimg" src="/images/bookseparator.png"></img>
+  </div>
+
+
+
+
+
+
+
+
+{/* <Container className="bookslide1"  >
 <Row className="availablerow"> <h2>By genres: Comic  </h2> </Row> 
 
 
@@ -315,7 +451,7 @@ Forget it . . . <i style={{fontSize:"20px"}} class="fas fa-angle-double-right"><
 </div>
       </Swiper>
 
-</Container>
+</Container> */}
 
 
 

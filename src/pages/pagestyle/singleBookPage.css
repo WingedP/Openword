@@ -85,14 +85,6 @@
     background-color: rgb(85, 84, 84);
 }
 
-
-.containerBookdata{
-    margin-top: 3rem;
- /* border: 1px solid black; */
- /* justify-content:space-between; */
-
-}
-
 .noReviewBox{
     height: 5rem;
     background-color: honeydew;
@@ -149,18 +141,86 @@ box-shadow: -6.3px -6.3px 0px 0px rgba(219,0,80,1);
 }
 
 @media only screen and (max-width: 400px) {
-.footerlogo {
+    /* html{
+        background: blue;
+    } */
+.bookdata{
+    margin-top: 0rem !important;
+    padding-top: 1rem;
+    overflow-x: hidden;
+    /* background: red; */
+}
+.booktitle {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1rem;
+    /* background: red; */
+    width: 90vw;
+}
+.singleBookIcon{
+    width: 3rem;
+}
+.footerlogo {   
     margin-left: 5rem;
 }
 .footerflourish{
 display: none;
 }
+.detailsinglebook{
+    margin-left: 1rem;
+    width: 90vw !important;
+    /* background: red; */
+}
+.singlebookthumbnailWrapper{
+    width: 90vw !important;
+    margin-left: 1rem;
+    /* margin-right: 2rem !important; */
+    /* background: red; */
+}
+.singlebookthumbnail{
+    margin-right: 0rem;
 
+}
+.reviewSectionWrapper{
+    /* background: red; */
+    width: 90vw;
+    padding: 0rem !important;
+    /* overflow-x: hidden !important ; */
+}
+
+.reviewSectionWrapper-row{
+    /* background: violet; */
+    width: 90vw !important;
+    margin: 0rem !important;
+    padding: 0rem !important;
+}
+.reviewSection{
+    margin: 0rem;
+    padding-bottom: 1rem;
+    /* background: aqua; */
+}
+.reviewSection3{
+    width: 90vw !important;
+    margin: 0rem !important;
 
 
 }
+.writereviewsection{
+    margin: 0rem !important;
+    /* background: gold !important; */
+    /* padding:0 !important; */
+    width: 90vw !important;
 
-@media only screen and (max-width: 940px) {
+}
+.line-borrow-mobile{
+    display: none !important;
+}
+.borrowingline{
+    display: block !important;
+}
+}
+
+/* @media only screen and (max-width: 940px) {
     .detailsinglebook {
             width: 30%;
     }
@@ -170,7 +230,7 @@ display: none;
     }
     
     
-    }
+    } */
 
 .librarianchat{
     margin-left: 3rem;
@@ -343,7 +403,16 @@ align-items: center;
     /* border: 1px solid black; */
 }
 
-
+.borrowingline{
+    display: none;
+}
+.borrowingline1{
+    color: rgb(90, 88, 88);
+    font-weight: normal;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
 
 .descriptionline1{
     color: rgb(90, 88, 88);
@@ -428,7 +497,7 @@ align-items: center;
     border: 1px solid gray;
     padding:2rem;
     margin-top: 1rem;
-    width: 38rem !important;
+    width: 38rem;
   }
   .titlelabelinfo{
       margin-left: 1rem;
