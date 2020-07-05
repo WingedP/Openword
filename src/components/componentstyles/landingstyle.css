@@ -3,6 +3,25 @@
 
 
 
+@media only screen and (max-width: 380px) {
+    .navbar-nav{
+        background: rgb(252, 228, 232) !important;
+    }
+    /* .nav-link{background: gray !important;} */
+    .landing-title{
+        font-size: 4rem !important;
+    }
+    .svg-section{
+        top: 13rem !important;
+    }
+    .landing-intro{
+        font-size: 1.5rem !important;
+        bottom: 25rem !important;
+
+    }
+}
+
+
 .landing{
     /* background: gold; */
     /* border: 5px solid black; */
@@ -10,7 +29,7 @@
     min-height: 100vh;
     /* width: 100%; */
     margin-top: 9rem;
-    margin-bottom: 10rem;
+    margin-bottom: 1rem;
 }
 
 /* .landing-img{

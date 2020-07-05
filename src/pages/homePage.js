@@ -81,50 +81,12 @@ let renderExploreAllBooks = showBooks.length === 0 ? <div>No Book.</div>
 
 return (        
   <div className="homepagez">
+ {/* <Navbar user={props.user} setUser={props.setUser}/> */}
 
 
 
-          {/* <Navbar user={props.user} setUser={props.setUser}/> */}
-                <Testnav user={props.user} setUser={props.setUser}/>
-
-{/* <Container fluid className="homepagezlinks" >
-        <Row  className="homepagezlinksrow" lg={12} md={6} sm={6}>       
-        <Col className="colhome" xs={6}><button className="linkhomepagez">Review</button></Col>   
-        <Col className="colhome"  xs={6}><button className="linkhomepagez">Giveaways</button></Col>   
-        <Col className="colhome"  xs={6}>        <button className="linkhomepagez">Explore</button></Col>   
- </Row> 
-  </Container>
-
-<Container className="homepagezBannertest">
-
-<img className="testbannerimg" src="/images/read.jpg"></img>
-<div className="openwordshadow" > </div>
-<Container className="bannerintro">
-        <Container  className="bannerintro1">Hi, We are </Container>
-
- <img className="logoopenword" src="/images/logoopenword.jpg"></img>
-
-<div className="bannerintrotitle" >
-<span className="letterO">
-<span className="letterOshadow">0</span>
-<img className="openwordIcon" src="/images/openword.png"></img> 
-0</span> penword.</div>
-
-
-<div  className="bannerintro2">We bring <span className="readerspan">readers</span><br/> and <span className="readerspan">books</span> <div>together.</div> </div>
-
-<Button className="aboutusbtn">
-<div className="aboutusbtn1"></div>
-About us</Button>
-</Container>
-
-</Container> */}
-
-
-
-
+<Testnav user={props.user} setUser={props.setUser}/>
 <LandingSection/>
-<div className="bookseparator"><img className="bookseparatorimg" src="/images/bookseparator.png"></img></div>
 
 
 <Container className="containertestttt">
@@ -184,36 +146,8 @@ Sign up</Button></Link>
 
 
 
-
-
-
-
-
-<Container  className="homepagezContent2">
+{/* <Container  className="homepagezContent2">
   <Row  className="row1homepage">
-{/* <Col>
-<Row  className="innerRow" >  
- <div>
- <div className="introwrapperimg" ><img className="" src="/images/closing.jpg"></img></div>
- <div className="introwrapper">
-  <h1>  1000 new users</h1> each month</div>
-</div>
-
-
-        <div>           
-<div className="introwrapperimg" ><img className="" src="/images/closing2.png"></img></div>
-    
-  <div  className="introwrapper"><h1>Great book</h1> shared for free!</div>
-  </div>
-
- <div>
-  <div className="introwrapperimg"><img className="" src="/images/closing.jpg"></img></div>
-  <div  className="introwrapper">Wanna share
-  <h1>your collection?</h1></div>
- </div>
- </Row>
-</Col> */}
-  
 
 
 <div className="reviewz">
@@ -253,27 +187,11 @@ Forget it . . . <i style={{fontSize:"20px"}} class="fas fa-angle-double-right"><
 </div>
 
 </Row>
-</Container>
+</Container> */}
 
 
 
 <Container className="bookslide">
-
-{/* <Row className="availablerow"> 
-<div>AVAILABLE FOR BORROWING:  
-<img  className="availablerowflourish" src="/images/flourishes/2.png"></img>
-        <div className="fromusertouser">from users to users</div>
-        </div>
-</Row>  */}
-
-{/* <Row className="availablerow">
-  <div className="latest-available">
-  <div className="tag-decor3"></div>
-  <div className="latest-available-inner">  LATEST AVAILABLE:
-</div>
-  </div>
-  
- </Row> */}
   
 <Row className="availablerow2">  
 

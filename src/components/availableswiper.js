@@ -83,7 +83,7 @@ return (
 
 
 <div className="info-wrapper">
-<div  className="card-info-detail2">Author:</div>
+<div  className="card-info-detail2">Rating:</div>
 <div className="card-info-detail fontChange">
 <span> {availableBook[availableBook.length-1].ratingAverage}<i class="far fa-star"></i> </span>   
    <span className="ratingQuantity">{availableBook[availableBook.length-1].ratingQuantity} voters</span>
@@ -135,9 +135,9 @@ return (
 </div></div>
 
 <div className="info-wrapper">
-<div  className="card-info-detail2">Author:</div>
+<div  className="card-info-detail2">Rating:</div>
 <div className="card-info-detail fontChange">
-<span> {availableBook[availableBook.length-1].ratingAverage}<i class="far fa-star"></i> </span>   
+<span> {availableBook[availableBook.length-2].ratingAverage}<i class="far fa-star"></i> </span>   
    <span className="ratingQuantity">{availableBook[availableBook.length-2].ratingQuantity} voters</span>
 </div></div>
 
@@ -153,6 +153,8 @@ return (
  <Card className="swipercard swipercard-bg3" 
   onClick={()=>{history.push(`./users/books/${availableBook[availableBook.length-3].id}`);}}>
  <Card.Img className="swipeimages" variant="top" src={availableBook[availableBook.length-3].thumbnail}/>
+
+
  <div className="card-info">
 
 
@@ -185,7 +187,7 @@ return (
 
 
 <div className="info-wrapper">
-<div  className="card-info-detail2">Author:</div>
+<div  className="card-info-detail2">Rating:</div>
 <div className="card-info-detail fontChange">
 <span> {availableBook[availableBook.length-1].ratingAverage}<i class="far fa-star"></i> </span>   
    <span className="ratingQuantity">{availableBook[availableBook.length-3].ratingQuantity} voters</span>
@@ -203,20 +205,14 @@ return (
  <Card className="swipercard swipercard-bg4" 
   onClick={()=>{history.push(`./users/books/${availableBook[availableBook.length-4].id}`);}}>
  <Card.Img className="swipeimages" variant="top" src={availableBook[availableBook.length-4].thumbnail}/>
+
  <div className="card-info">
 
-
 <div className="info-wrapper">
-
-
 <div className="card-info-detail2">Title:</div>
 <div className="card-info-detail fontChange">{availableBook[availableBook.length-1].title}
 </div>
-
-
 </div>
-
-
 
 <div className="info-wrapper">
 <div  className="card-info-detail2">Author:</div>
@@ -235,7 +231,7 @@ return (
 
 
 <div className="info-wrapper">
-<div  className="card-info-detail2">Author:</div>
+<div  className="card-info-detail2">Rating:</div>
 <div className="card-info-detail fontChange">
 <span> {availableBook[availableBook.length-1].ratingAverage}<i class="far fa-star"></i> </span>   
    <span className="ratingQuantity">{availableBook[availableBook.length-1].ratingQuantity} voters</span>
@@ -252,19 +248,92 @@ return (
  <Card className="swipercard swipercard-bg5" 
   onClick={()=>{history.push(`./users/books/${availableBook[availableBook.length-5].id}`);}}>
  <Card.Img className="swipeimages" variant="top" src={availableBook[availableBook.length-5].thumbnail}/>
-      <Card.Body className="">
+ <div className="card-info">
+
+<div className="info-wrapper">
+<div className="card-info-detail2">Title:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-5].title}
+</div>
+</div>
+
+<div className="info-wrapper">
+<div  className="card-info-detail2">Author:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-5].author}
+</div></div>
+
+
+<div className="info-wrapper"><div  className="card-info-detail2">Owner:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-5].owner.name}
+</div></div>
+
+<div className="info-wrapper"><div  className="card-info-detail2">Price:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-5].price}
+</div></div>
+
+
+
+<div className="info-wrapper">
+<div  className="card-info-detail2">Rating:</div>
+<div className="card-info-detail fontChange">
+<span> 
+  {availableBook[availableBook.length-5].ratingAverage}
+
+<i class="far fa-star"></i> </span>   
+   <span className="ratingQuantity">{availableBook[availableBook.length-5].ratingQuantity} voters</span>
+</div></div>
+
+
+</div>
+
+
+      {/* <Card.Body className="">
       <Card.Title>{availableBook[availableBook.length-5].title}</Card.Title>   
       <Card.Text>From user: {availableBook[availableBook.length-5].owner.name}</Card.Text>                
-        </Card.Body>
+        </Card.Body> */}
  </Card>
  
  <Card className="swipercard swipercard-bg6" 
   onClick={()=>{history.push(`./users/books/${availableBook[availableBook.length-6].id}`);}}>
  <Card.Img className="swipeimages" variant="top" src={availableBook[availableBook.length-6].thumbnail}/>
-      <Card.Body className="">
+ <div className="card-info">
+
+<div className="info-wrapper">
+<div className="card-info-detail2">Title:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-6].title}
+</div>
+</div>
+
+<div className="info-wrapper">
+<div  className="card-info-detail2">Author:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-6].author}
+</div></div>
+
+
+<div className="info-wrapper"><div  className="card-info-detail2">Owner:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-6].owner.name}
+</div></div>
+
+<div className="info-wrapper"><div  className="card-info-detail2">Price:</div>
+<div className="card-info-detail fontChange">{availableBook[availableBook.length-6].price}
+</div></div>
+
+
+
+<div className="info-wrapper">
+<div  className="card-info-detail2">Rating:</div>
+<div className="card-info-detail fontChange">
+<span> {availableBook[availableBook.length-6].ratingAverage}<i class="far fa-star"></i> </span>   
+   <span className="ratingQuantity">{availableBook[availableBook.length-6].ratingQuantity} voters</span>
+</div></div>
+
+
+</div>
+
+
+      {/* <Card.Body className="">
       <Card.Title>{availableBook[availableBook.length-6].title}</Card.Title>    
       <Card.Text>From user: {availableBook[availableBook.length-6].owner.name}</Card.Text>                
-        </Card.Body>
+        </Card.Body> */}
  </Card>
  
 </Swiper>
